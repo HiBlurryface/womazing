@@ -1,13 +1,13 @@
 import React from "react";
-import logo from './../assets/images/logo.svg'
 import { NavLink } from "react-router-dom";
 
-import navigation from "./UI/Navigation";
+import navigation from "./../../store/Navigation";
 
-import instagramm from './../assets/images/instagramm.svg'
-import facebook from './../assets/images/facebook.svg'
-import twitter from './../assets/images/twitter.svg'
-import paymentMethods from './../assets/images/visa-mastercard.svg'
+import logo from './../../assets/images/logo.svg'
+import instagramm from './../../assets/images/instagramm.svg'
+import facebook from './../../assets/images/facebook.svg'
+import twitter from './../../assets/images/twitter.svg'
+import paymentMethods from './../../assets/images/visa-mastercard.svg'
 
 function Footer() {
     return <footer className="footer">

@@ -1,0 +1,24 @@
+.style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 243px;
+    height: 68px;
+    background: #6E9C9F;
+
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 138.9%;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    transition: all 0.5s ease;
+    @media (max-width: 1024px) {
+        width: 180px;
+        height: 50px;
+        font-size: 14px;
+    }
+    &:hover {
+        transition: all 0.5s ease;
+        background: #509498;
+    }
+}

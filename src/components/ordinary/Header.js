@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import navigation from "./UI/Navigation";
+import navigation from "./../../store/Navigation";
 
-import logo from './../assets/images/logo.svg'
-import shoppingCart from './../assets/images/shopping-cart.svg'
+import logo from './../../assets/images/logo.svg'
+import shoppingCart from './../../assets/images/shopping-cart.svg'
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false);
