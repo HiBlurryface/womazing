@@ -17,8 +17,8 @@ function Header() {
                 </a>
                 <nav className="header__nav">
                     <ul className="header__nav-body">
-                        {navigation.map(link => {
-                            return <li className="header__nav-item">
+                        {navigation.map((link, index) => {
+                            return <li className="header__nav-item" key={index}>
                                 <NavLink
                                     to={link.href}
                                     className="header__nav-link"

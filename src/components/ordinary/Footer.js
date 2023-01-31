@@ -19,8 +19,8 @@ function Footer() {
                     </a>
                     <nav className="footer__nav">
                         <ul className="footer__nav-body">
-                            {navigation.map(link => {
-                                return <li className="footer__nav-item">
+                            {navigation.map((link, index) => {
+                                return <li className="footer__nav-item" key={index}>
                                     <NavLink
                                         to={link.href}
                                         className="footer__nav-link">

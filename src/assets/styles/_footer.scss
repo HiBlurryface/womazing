@@ -2,9 +2,18 @@
     margin-top: auto;
     padding: 104px 0;
     background: #F1EADC;
+    margin: 130px 0 0 0;
 
     @media (max-width: 1440px) {
+        margin: 100px 0 0 0;
         padding: 30px 0;
+    }
+
+    @media (max-width: 1024px) {
+        margin: 80px 0 0 0;
+    }
+    @media (max-width: 425px) {
+        margin: 60px 0 0 0;
     }
 
     &__row {
