@@ -1,10 +1,9 @@
 import React from "react";
 
-// import Swiper from 'swiper'
 import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-
+    
 import Button from "../components/UI/button/Button";
 import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
 
