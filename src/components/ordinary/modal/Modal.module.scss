@@ -1,0 +1,92 @@
+@import './../../../assets/styles/_styles.scss';
+
+.modal {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(110, 156, 159, 0.95);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    @extend %main-transition;
+
+    &_active {
+        opacity: 1;
+        visibility: visible;
+        @extend %main-transition;
+    }
+}
+.form {
+    & input {
+        margin-bottom: 35px;
+
+        @media (max-width: 1024px) {
+            margin-bottom: 25px;
+        }
+    }
+}
+.wrapper {
+    padding: 70px;
+    background: #fff;
+    max-width: 490px;
+    margin: 0 20px;
+    position: relative;
+
+    @media (max-width: 1024px) {
+        padding: 35px;
+        max-width: 350px;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 25px;
+    height: 25px;
+    background: transparent;
+
+    @media (max-width: 1024px) {
+        right: 15px;
+        top: 15px;
+        width: 15px;
+        height: 15px;
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: ' ';
+        width: 100%;
+        height: 1px;
+        background: #000;
+        top: 12.5px;
+        left: 0;
+
+        @media (max-width: 1024px) {
+            top: 7.5px;
+        }
+    }
+
+    &:before {
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 35px;
+    @extend %title-H3;
+    @media (max-width: 1024px) {
+        margin-bottom: 20px;
+    }
+}

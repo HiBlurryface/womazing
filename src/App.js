@@ -1,15 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 
-import './App.css';
-import './assets/styles/main.scss'
-
-import Header from './components/ordinary/Header'
-import Footer from './components/ordinary/Footer';
+import Header from './components/ordinary/header/Header'
+import Footer from './components/ordinary/footer/Footer';
 
 import Home from './pages/Home'
 import Catalog from './pages/Catalog'
 import About from './pages/About'
 import Contacts from './pages/Contacts'
+
+import './assets/styles/main.scss'
 
 function App() {
 

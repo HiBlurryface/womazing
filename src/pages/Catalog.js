@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 
 import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
@@ -6,174 +7,176 @@ import product from './../assets/images/product.jpg'
 import buttonNext from './../assets/images/slider-arrow-next.svg'
 import buttonPrev from './../assets/images/slider-arrow-prev.svg'
 
+import styles from './../assets/styles/Catalog.module.scss'
+
 function Catalog() {
     return <>
-        <div className="preview">
-            <div className="preview__container container">
-                <div className="preview__content">
-                    <h1 className="preview__title title-H1">Магазин</h1>
-                    <div className="preview__breadcrumbs">
-                        <a href="" className="preview__breadcrumbs-item default-text">Главная</a>
-                        <span className="preview__breadcrumbs-separation"></span>
-                        <a className="preview__breadcrumbs-item default-text active">Магазин</a>
+        <div className={styles.preview}>
+            <div className={styles.container}>
+                <div className={styles.preview__content}>
+                    <h1 className={styles.preview__title}>Магазин</h1>
+                    <div className={styles.preview__breadcrumbs}>
+                        <a href="" className={styles.preview__breadcrumbs_item}>Главная</a>
+                        <span className={styles.preview__breadcrumbs_separation}></span>
+                        <a className={styles.preview__breadcrumbs_item_active}>Магазин</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div className="filters">
-            <div className="filters__container container">
-                <div className="filters__content">
-                    <button className="filters__item active default-text">Все</button>
-                    <button className="filters__item default-text">Пальто</button>
-                    <button className="filters__item default-text">Свитшоты</button>
-                    <button className="filters__item default-text">Кардиганы</button>
-                    <button className="filters__item default-text">Толстовки</button>
+        <div className={styles.filters}>
+            <div className={styles.container}>
+                <div className={styles.filters__content}>
+                    <button className={classNames(styles.filters__item, styles.filters__item_active)}>Все</button>
+                    <button className={styles.filters__item}>Пальто</button>
+                    <button className={styles.filters__item}>Свитшоты</button>
+                    <button className={styles.filters__item}>Кардиганы</button>
+                    <button className={styles.filters__item}>Толстовки</button>
                 </div>
             </div>
         </div>
-        <section className="products">
-            <div className="products__container container">
-                <p className="products__text default-text">Показано 9 из 12 товаров</p>
-                <div className="products__content">
-                    <div className="products__item">
-                        <div className="products__item-img">
-                            <div className="products__item-bg">
+        <section className={styles.products}>
+            <div className={styles.container}>
+                <p className={styles.products__text}>Показано 9 из 12 товаров</p>
+                <div className={styles.products__content}>
+                    <div className={styles.products__item}>
+                        <div className={styles.products__item_img}>
+                            <div className={styles.products__item_bg}>
                                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
                                 </svg>
                             </div>
-                            <img src={product} alt="" className="products__item-pic" />
+                            <img src={product} alt="" className={styles.products__item_pic} />
                         </div>
-                        <div className="products__item-descr">
-                            <h4 className="products__item-title title-H4">Футболка</h4>
-                            <p className="products__item-price">$129</p>
+                        <div className={styles.products__item_descr}>
+                            <h4 className={styles.products__item_title}>Футболка</h4>
+                            <p className={styles.products__item_price}>$129</p>
                         </div>
                     </div>
-                    <div className="products__item">
-                        <div className="products__item-img">
-                            <div className="products__item-bg">
+                    <div className={styles.products__item}>
+                        <div className={styles.products__item_img}>
+                            <div className={styles.products__item_bg}>
                                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
                                 </svg>
                             </div>
-                            <img src={product} alt="" className="products__item-pic" />
+                            <img src={product} alt="" className={styles.products__item_pic} />
                         </div>
-                        <div className="products__item-descr">
-                            <h4 className="products__item-title title-H4">Футболка</h4>
-                            <p className="products__item-price">$129</p>
+                        <div className={styles.products__item_descr}>
+                            <h4 className={styles.products__item_title}>Футболка</h4>
+                            <p className={styles.products__item_price}>$129</p>
                         </div>
                     </div>
-                    <div className="products__item">
-                        <div className="products__item-img">
-                            <div className="products__item-bg">
+                    <div className={styles.products__item}>
+                        <div className={styles.products__item_img}>
+                            <div className={styles.products__item_bg}>
                                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
                                 </svg>
                             </div>
-                            <img src={product} alt="" className="products__item-pic" />
+                            <img src={product} alt="" className={styles.products__item_pic} />
                         </div>
-                        <div className="products__item-descr">
-                            <h4 className="products__item-title title-H4">Футболка</h4>
-                            <p className="products__item-price">$129</p>
+                        <div className={styles.products__item_descr}>
+                            <h4 className={styles.products__item_title}>Футболка</h4>
+                            <p className={styles.products__item_price}>$129</p>
                         </div>
                     </div>
-                    <div className="products__item">
-                        <div className="products__item-img">
-                            <div className="products__item-bg">
+                    <div className={styles.products__item}>
+                        <div className={styles.products__item_img}>
+                            <div className={styles.products__item_bg}>
                                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
                                 </svg>
                             </div>
-                            <img src={product} alt="" className="products__item-pic" />
+                            <img src={product} alt="" className={styles.products__item_pic} />
                         </div>
-                        <div className="products__item-descr">
-                            <h4 className="products__item-title title-H4">Футболка</h4>
-                            <p className="products__item-price">$129</p>
+                        <div className={styles.products__item_descr}>
+                            <h4 className={styles.products__item_title}>Футболка</h4>
+                            <p className={styles.products__item_price}>$129</p>
                         </div>
                     </div>
-                    <div className="products__item">
-                        <div className="products__item-img">
-                            <div className="products__item-bg">
+                    <div className={styles.products__item}>
+                        <div className={styles.products__item_img}>
+                            <div className={styles.products__item_bg}>
                                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
                                 </svg>
                             </div>
-                            <img src={product} alt="" className="products__item-pic" />
+                            <img src={product} alt="" className={styles.products__item_pic} />
                         </div>
-                        <div className="products__item-descr">
-                            <h4 className="products__item-title title-H4">Футболка</h4>
-                            <p className="products__item-price">$129</p>
+                        <div className={styles.products__item_descr}>
+                            <h4 className={styles.products__item_title}>Футболка</h4>
+                            <p className={styles.products__item_price}>$129</p>
                         </div>
                     </div>
-                    <div className="products__item">
-                        <div className="products__item-img">
-                            <div className="products__item-bg">
+                    <div className={styles.products__item}>
+                        <div className={styles.products__item_img}>
+                            <div className={styles.products__item_bg}>
                                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
                                 </svg>
                             </div>
-                            <img src={product} alt="" className="products__item-pic" />
+                            <img src={product} alt="" className={styles.products__item_pic} />
                         </div>
-                        <div className="products__item-descr">
-                            <h4 className="products__item-title title-H4">Футболка</h4>
-                            <p className="products__item-price">$129</p>
+                        <div className={styles.products__item_descr}>
+                            <h4 className={styles.products__item_title}>Футболка</h4>
+                            <p className={styles.products__item_price}>$129</p>
                         </div>
                     </div>
-                    <div className="products__item">
-                        <div className="products__item-img">
-                            <div className="products__item-bg">
+                    <div className={styles.products__item}>
+                        <div className={styles.products__item_img}>
+                            <div className={styles.products__item_bg}>
                                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
                                 </svg>
                             </div>
-                            <img src={product} alt="" className="products__item-pic" />
+                            <img src={product} alt="" className={styles.products__item_pic} />
                         </div>
-                        <div className="products__item-descr">
-                            <h4 className="products__item-title title-H4">Футболка</h4>
-                            <p className="products__item-price">$129</p>
+                        <div className={styles.products__item_descr}>
+                            <h4 className={styles.products__item_title}>Футболка</h4>
+                            <p className={styles.products__item_price}>$129</p>
                         </div>
                     </div>
-                    <div className="products__item">
-                        <div className="products__item-img">
-                            <div className="products__item-bg">
+                    <div className={styles.products__item}>
+                        <div className={styles.products__item_img}>
+                            <div className={styles.products__item_bg}>
                                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
                                 </svg>
                             </div>
-                            <img src={product} alt="" className="products__item-pic" />
+                            <img src={product} alt="" className={styles.products__item_pic} />
                         </div>
-                        <div className="products__item-descr">
-                            <h4 className="products__item-title title-H4">Футболка</h4>
-                            <p className="products__item-price">$129</p>
+                        <div className={styles.products__item_descr}>
+                            <h4 className={styles.products__item_title}>Футболка</h4>
+                            <p className={styles.products__item_price}>$129</p>
                         </div>
                     </div>
-                    <div className="products__item">
-                        <div className="products__item-img">
-                            <div className="products__item-bg">
+                    <div className={styles.products__item}>
+                        <div className={styles.products__item_img}>
+                            <div className={styles.products__item_bg}>
                                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
                                 </svg>
                             </div>
-                            <img src={product} alt="" className="products__item-pic" />
+                            <img src={product} alt="" className={styles.products__item_pic} />
                         </div>
-                        <div className="products__item-descr">
-                            <h4 className="products__item-title title-H4">Футболка</h4>
-                            <p className="products__item-price">$129</p>
+                        <div className={styles.products__item_descr}>
+                            <h4 className={styles.products__item_title}>Футболка</h4>
+                            <p className={styles.products__item_price}>$129</p>
                         </div>
                     </div>
                 </div>
-                <p className="products__text default-text">Показано 9 из 12 товаров</p>
+                <p className={styles.products__text}>Показано 9 из 12 товаров</p>
             </div>
         </section>
-        <div className="pagination">
-            <div className="pagination__container container">
-                <div className="pagination__content">
-                    <button className="pagination__prev">
+        <div className={styles.pagination}>
+            <div className={styles.container}>
+                <div className={styles.pagination__content}>
+                    <button className={styles.pagination__prev}>
                         <img src={buttonPrev} alt="" />
                     </button>
-                    <button className="pagination__button default-text active">1</button>
-                    <button className="pagination__button default-text">2</button>
-                    <button className="pagination__next">
+                    <button className={classNames(styles.pagination__button, styles.pagination__button_active)}>1</button>
+                    <button className={styles.pagination__button}>2</button>
+                    <button className={styles.pagination__next}>
                         <img src={buttonNext} alt="" />
                     </button>
                 </div>
