@@ -121,36 +121,6 @@
 
     &__slider {
         position: unset !important;
-        &~.swiper-pagination {
-            position: absolute;
-            bottom: -100px;
-            z-index: 100;
-            display: flex;
-            max-width: 385px;
-            width: 100%;
-            justify-content: flex-end;
-
-            @media (max-width: 1024px) {
-                bottom: -30px;
-                justify-content: flex-start;
-            }
-
-            &-bullet {
-                display: block;
-                width: 30px;
-                height: 4px;
-                background: #D1D1D1;
-                cursor: pointer;
-
-                &:not(:last-child) {
-                    margin-right: 12px;
-                }
-
-                &-active {
-                    background: #000;
-                }
-            }
-        }
     }
 
     &__img {
@@ -230,6 +200,7 @@
             text-align: center;
         }
     }
+
     &__item {
         max-width: 32%;
         width: 100%;
@@ -403,71 +374,6 @@
 
         &_wrapper {
             position: unset !important;
-        }
-
-        & .swiper-pagination {
-            position: absolute;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 100;
-            display: flex;
-
-            @media (max-width: 768px) {
-                bottom: 20px;
-            }
-
-            &-bullet {
-                display: block;
-                width: 30px;
-                height: 4px;
-                background: rgba(255, 255, 255, 0.36);
-                cursor: pointer;
-
-                &:not(:last-child) {
-                    margin-right: 12px;
-                }
-
-                &-active {
-                    background: #FFFFFF;
-                }
-            }
-        }
-
-        & .swiper-button-prev {
-            position: absolute;
-            top: 50%;
-            margin-left: -60px;
-            left: 0;
-            transform: translateY(-50%);
-            z-index: 100;
-            cursor: pointer;
-
-            @media (max-width: 1300px) {
-                margin-left: 20px;
-            }
-
-            &:before {
-                content: url('../images/slider-arrow-prev.svg');
-            }
-        }
-
-        & .swiper-button-next {
-            z-index: 100;
-            position: absolute;
-            top: 50%;
-            margin-right: -60px;
-            right: 0;
-            transform: translateY(-50%);
-            cursor: pointer;
-
-            @media (max-width: 1300px) {
-                margin-right: 20px;
-            }
-
-            &:before {
-                content: url('../images/slider-arrow-next.svg');
-            }
         }
     }
 

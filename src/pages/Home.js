@@ -1,7 +1,6 @@
 import React from "react";
-
-import { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Pagination, Navigation } from "swiper";
 
 import Button from "../components/UI/button/Button";
 import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
@@ -18,21 +17,26 @@ import about2 from './../assets/images/about-img-2.jpg'
 import about3 from './../assets/images/about-img-3.jpg'
 
 import 'swiper/css';
+import './../assets/styles/swiper.scss'
 import styles from './../assets/styles/Home.module.scss'
 import classNames from "classnames";
 
 function Home() {
+    SwiperCore.use([Pagination]);
+
     return <>
         <div className={styles.intro}>
             <div className={styles.container}>
                 <div className={styles.intro__content}>
                     <div className={styles.intro__text}>
                         <Swiper className={styles.intro__slider}
-                            modules={[Pagination]}
                             spaceBetween={0}
                             slidesPerView={1}
-                            pagination={{ clickable: true }}
                             loop={true}
+                            pagination={{
+                                el: '.intro__slider_pagination',
+                                clickable: true,
+                            }}
                         >
                             <SwiperSlide>
                                 <h1 className={styles.intro__text_title}>Новые поступления в этом сезоне</h1>
@@ -46,6 +50,7 @@ function Home() {
                                 <h2 className={styles.intro__text_title}>Включай новый сезон с WOMAZING</h2>
                                 <p className={styles.intro__text_subtitle}>Мы обновили ассортимент - легендарные коллекции и новинки от отечественных дизайнеров</p>
                             </SwiperSlide>
+                            <div className='intro__slider_pagination'></div>
                         </Swiper>
                         <div className={styles.intro__text_group}>
                             <Button>Открыть магазин</Button>
@@ -144,12 +149,15 @@ function Home() {
                     <div className={styles.about__slider}>
                         <div className={styles.about__slider_container}>
                             <Swiper className={styles.about__slider_wrapper}
-                                // modules={[Navigation, Pagination]}
+                                modules={[Navigation]}
                                 spaceBetween={0}
                                 slidesPerView={1}
                                 navigation
-                                // pagination={{ clickable: true }}
                                 loop={true}
+                                pagination={{
+                                    el: '.about__slider_pagination',
+                                    clickable: true,
+                                }}
                             >
                                 <SwiperSlide>
                                     <img src={about1} alt="" className={styles.about__slider_img} />
@@ -160,6 +168,7 @@ function Home() {
                                 <SwiperSlide>
                                     <img src={about3} alt="" className={styles.about__slider_img} />
                                 </SwiperSlide>
+                                <div className='about__slider_pagination'></div>
                             </Swiper>
                         </div>
                     </div>

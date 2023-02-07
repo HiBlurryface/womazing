@@ -1,7 +1,6 @@
-import classNames from "classnames";
 import React from "react";
+import classNames from "classnames";
 
-import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
 import product from './../assets/images/product.jpg'
 
 import buttonNext from './../assets/images/slider-arrow-next.svg'
@@ -23,7 +22,7 @@ function Catalog() {
                 </div>
             </div>
         </div>
-        <div className={styles.filters}>
+        <section className={styles.filters}>
             <div className={styles.container}>
                 <div className={styles.filters__content}>
                     <button className={classNames(styles.filters__item, styles.filters__item_active)}>Все</button>
@@ -33,7 +32,7 @@ function Catalog() {
                     <button className={styles.filters__item}>Толстовки</button>
                 </div>
             </div>
-        </div>
+        </section>
         <section className={styles.products}>
             <div className={styles.container}>
                 <p className={styles.products__text}>Показано 9 из 12 товаров</p>
@@ -166,11 +165,7 @@ function Catalog() {
                     </div>
                 </div>
                 <p className={styles.products__text}>Показано 9 из 12 товаров</p>
-            </div>
-        </section>
-        <div className={styles.pagination}>
-            <div className={styles.container}>
-                <div className={styles.pagination__content}>
+                <div className={styles.pagination}>
                     <button className={styles.pagination__prev}>
                         <img src={buttonPrev} alt="" />
                     </button>
@@ -181,7 +176,7 @@ function Catalog() {
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     </>
 }
 

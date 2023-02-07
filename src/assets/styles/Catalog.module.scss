@@ -5,10 +5,10 @@
 }
 
 .preview {
-    margin-top: 200px;
+    margin: 200px 0 0;
 
     @media (max-width: 768px) {
-        margin-top: 150px;
+        margin: 130px 0 0;
     }
 
     &__title {
@@ -43,11 +43,6 @@
 }
 
 .filters {
-    margin: 150px 0 0px;
-
-    @media (max-width: 768px) {
-        margin: 110px 0 0;
-    }
 
     &__content {
         display: flex;
@@ -171,15 +166,12 @@
 }
 
 .pagination {
-    margin-top: 60px;
-
-    &__content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 60px auto 0;
     &__prev,
     &__next {
         background: transparent;
@@ -191,6 +183,7 @@
         height: 41px;
         border: 1px solid #000;
         @extend %default-text;
+
         &_active {
             background: #000;
             color: #fff;
