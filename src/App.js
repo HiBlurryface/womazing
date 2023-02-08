@@ -8,6 +8,7 @@ import Catalog from './pages/Catalog'
 import Product from './pages/Product'
 import About from './pages/About'
 import Contacts from './pages/Contacts'
+import Cart from './pages/Cart';
 
 import './assets/styles/main.scss'
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/product" element={<Product />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </main>
       <Footer />

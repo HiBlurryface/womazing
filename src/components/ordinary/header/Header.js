@@ -55,10 +55,10 @@ function Header() {
                         </div>
                         <p className={styles.contact_text}>+7 (495) 823-54-12</p>
                     </button>
-                    <div className={styles.cart}>
+                    <NavLink to="/cart" className={styles.cart}>
                         <img src={shoppingCart} className={styles.cart_icon} />
                         {/* <span className={styles.cart_items}>0</span> */}
-                    </div>
+                    </NavLink>
                     <button type="button" className={classNames(styles.burger, { [`${styles.burger_active}`]: isOpen })} onClick={() => setIsOpen(!isOpen)}>
                         <span></span>
                         <span></span>
