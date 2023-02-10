@@ -1,5 +1,6 @@
 import React from "react";
 
+import Preview from "../components/ordinary/preview/Preview";
 import Input from './../components/UI/input/Input';
 import Button from './../components/UI/button/Button';
 
@@ -7,18 +8,7 @@ import styles from './../assets/styles/Checkout.module.scss';
 import Textarea from "../components/UI/textarea/Textarea";
 function Checkout() {
     return <>
-        <div className={styles.preview}>
-            <div className={styles.container}>
-                <div className={styles.preview__content}>
-                    <h1 className={styles.preview__title}>Оформление заказа</h1>
-                    <div className={styles.preview__breadcrumbs}>
-                        <a href="" className={styles.preview__breadcrumbs_item}>Главная</a>
-                        <span className={styles.preview__breadcrumbs_separation}></span>
-                        <a className={styles.preview__breadcrumbs_item_active}>Оформление заказа</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Preview title="Оформление заказа"/>
         <section className={styles.order}>
             <div className={styles.container}>
                 <div className={styles.order__form}>

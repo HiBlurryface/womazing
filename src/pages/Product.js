@@ -1,25 +1,15 @@
-import classNames from "classnames";
 import React from "react";
+import classNames from "classnames";
+
+import Preview from "../components/ordinary/preview/Preview";
+import ProductsItem from "../components/ordinary/productsItem/ProductsItem";
 import Button from "../components/UI/button/Button";
 
 import product from './../assets/images/product.jpg'
 import styles from './../assets/styles/Product.module.scss'
 function Product() {
     return <>
-        <div className={styles.preview}>
-            <div className={styles.container}>
-                <div className={styles.preview__content}>
-                    <h1 className={styles.preview__title}>Магазин</h1>
-                    <div className={styles.preview__breadcrumbs}>
-                        <a href="" className={styles.preview__breadcrumbs_item}>Главная</a>
-                        <span className={styles.preview__breadcrumbs_separation}></span>
-                        <a className={styles.preview__breadcrumbs_item}>Магазин</a>
-                        <span className={styles.preview__breadcrumbs_separation}></span>
-                        <a className={styles.preview__breadcrumbs_item_active}>Продукт</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Preview title="Футболка USA"/>
         <section className={styles.item}>
             <div className={styles.container}>
                 <div className={styles.item__content}>
@@ -64,34 +54,8 @@ function Product() {
             <div className={styles.container}>
                 <h2 className={styles.catalog__title}>Связанные товары</h2>
                 <div className={styles.catalog__content}>
-                    <div className={styles.catalog__item}>
-                        <div className={styles.catalog__item_img}>
-                            <div className={styles.catalog__item_bg}>
-                                <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
-                                </svg>
-                            </div>
-                            <img src={product} alt="" className={styles.catalog__item_pic} />
-                        </div>
-                        <div className={styles.catalog__item_descr}>
-                            <h4 className={styles.catalog__item_title}>Футболка</h4>
-                            <p className={styles.catalog__item_price}>$129</p>
-                        </div>
-                    </div>
-                    <div className={styles.catalog__item}>
-                        <div className={styles.catalog__item_img}>
-                            <div className={styles.catalog__item_bg}>
-                                <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
-                                </svg>
-                            </div>
-                            <img src={product} alt="" className={styles.catalog__item_pic} />
-                        </div>
-                        <div className={styles.catalog__item_descr}>
-                            <h4 className={styles.catalog__item_title}>Футболка</h4>
-                            <p className={styles.catalog__item_price}>$129</p>
-                        </div>
-                    </div>
+                    <ProductsItem photo={product}/>
+                    <ProductsItem photo={product}/>
                 </div>
             </div>
         </section>

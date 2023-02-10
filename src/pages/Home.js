@@ -20,6 +20,7 @@ import 'swiper/css';
 import './../assets/styles/swiper.scss'
 import styles from './../assets/styles/Home.module.scss'
 import classNames from "classnames";
+import ProductsItem from "../components/ordinary/productsItem/ProductsItem";
 
 function Home() {
     SwiperCore.use([Pagination]);
@@ -74,48 +75,9 @@ function Home() {
             <div className={styles.container}>
                 <h2 className={styles.products__title}>Новая коллекция</h2>
                 <div className={styles.products__content}>
-                    <div className={styles.products__item}>
-                        <div className={styles.products__item_img}>
-                            <div className={styles.products__item_bg}>
-                                <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
-                                </svg>
-                            </div>
-                            <img src={product} alt="" className={styles.products__item_pic} />
-                        </div>
-                        <div className={styles.products__item_descr}>
-                            <h4 className={styles.products__item_title}>Футболка</h4>
-                            <p className={styles.products__item_price}>$129</p>
-                        </div>
-                    </div>
-                    <div className={styles.products__item}>
-                        <div className={styles.products__item_img}>
-                            <div className={styles.products__item_bg}>
-                                <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
-                                </svg>
-                            </div>
-                            <img src={product} alt="" className={styles.products__item_pic} />
-                        </div>
-                        <div className={styles.products__item_descr}>
-                            <h4 className={styles.products__item_title}>Футболка</h4>
-                            <p className={styles.products__item_price}>$129</p>
-                        </div>
-                    </div>
-                    <div className={styles.products__item}>
-                        <div className={styles.products__item_img}>
-                            <div className={styles.products__item_bg}>
-                                <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
-                                </svg>
-                            </div>
-                            <img src={product} alt="" className={styles.products__item_pic} />
-                        </div>
-                        <div className={styles.products__item_descr}>
-                            <h4 className={styles.products__item_title}>Футболка</h4>
-                            <p className={styles.products__item_price}>$129</p>
-                        </div>
-                    </div>
+                    <ProductsItem photo={product}/>
+                    <ProductsItem photo={product}/>
+                    <ProductsItem photo={product}/>
                 </div>
                 <ButtonTransparent>Открыть магазин</ButtonTransparent>
             </div>

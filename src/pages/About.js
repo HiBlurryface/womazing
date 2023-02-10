@@ -1,4 +1,6 @@
 import React from "react";
+
+import Preview from '../components/ordinary/preview/Preview'
 import Button from "../components/UI/button/Button";
 
 import about1 from './../assets/images/about1.jpg'
@@ -6,18 +8,7 @@ import about2 from './../assets/images/about2.jpg'
 import styles from './../assets/styles/About.module.scss'
 function About() {
     return <>
-        <div className={styles.preview}>
-            <div className={styles.container}>
-                <div className={styles.preview__content}>
-                    <h1 className={styles.preview__title}>О бренде</h1>
-                    <div className={styles.preview__breadcrumbs}>
-                        <a href="" className={styles.preview__breadcrumbs_item}>Главная</a>
-                        <span className={styles.preview__breadcrumbs_separation}></span>
-                        <a className={styles.preview__breadcrumbs_item_active}>О бренде</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Preview title="О Бренде"/>
         <section className={styles.about}>
             <div className={styles.container}>
                 <div className={styles.about__content}>
@@ -41,7 +32,7 @@ function About() {
                             <p className={styles.about__block_info}>Несмотря на то, что по образованию основательница была адвокатом, ее семья всегда была тесно связана с шитьём (прабабушка основательницы шила одежду для женщин, а мать основала профессиональную школу кроя и шитья). Стремление производить одежду для масс несло в себе большие перспективы, особенно в то время, когда высокая мода по-прежнему доминировала, а рынка качественного prêt-a-porter попросту не существовало.</p>
                         </div>
                     </div>
-                    <Button style={{margin: '0px auto'}}>Перейти в магазин</Button>
+                    <Button style={{ margin: '0px auto' }}>Перейти в магазин</Button>
                 </div>
             </div>
         </section>

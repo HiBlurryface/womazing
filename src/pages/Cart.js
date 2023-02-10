@@ -1,25 +1,15 @@
 import React from "react";
+
+import Preview from '../components/ordinary/preview/Preview'
 import Button from "../components/UI/button/Button";
 import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
-
 import Input from "../components/UI/input/Input";
 
 import product from './../assets/images/product.jpg'
 import styles from './../assets/styles/Cart.module.scss';
 function Cart() {
     return <>
-        <div className={styles.preview}>
-            <div className={styles.container}>
-                <div className={styles.preview__content}>
-                    <h1 className={styles.preview__title}>Корзина</h1>
-                    <div className={styles.preview__breadcrumbs}>
-                        <a href="" className={styles.preview__breadcrumbs_item}>Главная</a>
-                        <span className={styles.preview__breadcrumbs_separation}></span>
-                        <a className={styles.preview__breadcrumbs_item_active}>Корзина</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Preview title="Корзина" />
         <section className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.items}>

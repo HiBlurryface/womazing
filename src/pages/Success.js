@@ -1,25 +1,13 @@
 import React from "react";
 
+import Preview from "../components/ordinary/preview/Preview";
 import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
 
 import success from './../assets/images/success.svg';
 import styles from './../assets/styles/Success.module.scss'
 function Success() {
     return <>
-        <div className={styles.preview}>
-            <div className={styles.container}>
-                <div className={styles.preview__content}>
-                    <h1 className={styles.preview__title}>Заказ получен</h1>
-                    <div className={styles.preview__breadcrumbs}>
-                        <a href="" className={styles.preview__breadcrumbs_item}>Главная</a>
-                        <span className={styles.preview__breadcrumbs_separation}></span>
-                        <a className={styles.preview__breadcrumbs_item}>Оформление заказа</a>
-                        <span className={styles.preview__breadcrumbs_separation}></span>
-                        <a className={styles.preview__breadcrumbs_item_active}>Заказ получен</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Preview title="Заказ получен"/>
         <section className={styles.content}>
             <div className={styles.container}>
                 <div className={styles.block}>
