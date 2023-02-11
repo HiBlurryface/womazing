@@ -55,7 +55,7 @@ function Checkout() {
             paymentMethod: payment, 
         }
         console.log(data)
-        navigate('/success')
+        navigate('/checkout/success')
     };
 
     return <>

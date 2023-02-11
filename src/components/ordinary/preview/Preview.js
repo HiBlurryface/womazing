@@ -7,7 +7,7 @@ function Preview({title}) {
         <div className={styles.container}>
             <div className={styles.content}>
                 <h1 className={styles.title}>{title}</h1>
-                <Breadcrumbs />
+                <Breadcrumbs title={title}/>
             </div>
         </div>
     </div>

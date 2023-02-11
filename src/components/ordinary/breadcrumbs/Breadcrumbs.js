@@ -1,13 +1,24 @@
+import classNames from "classnames";
 import React from "react";
+import { useLocation } from "react-router";
+import { NavLink } from "react-router-dom";
 
 import styles from './Breadcrumbs.module.scss'
-function Breadcrumbs() {
+
+const Breadcrumbs = ({title}) => {
+    const location = useLocation();
+    const crumbs = location.pathname.split('/')
+        .filter(crumb => crumb !== '')
+        .map(crumb => {
+            return <div key={crumb} style={{display:'flex', alignItems:'center'}}>
+                <span className={styles.separation}></span>
+                <NavLink to={`/${crumb}`} className={classNames(styles.item, styles.item__active)}>{title}</NavLink>
+            </div>
+        })
+
     return <div className={styles.wrapper}>
-        <a href="" className={styles.item}>Главная</a>
-        <span className={styles.separation}></span>
-        <a className={styles.item}>Магазин</a>
-        <span className={styles.separation}></span>
-        <a className={styles.item__active}>Продукт</a>
+        <NavLink to="/" className={styles.item}>Главная</NavLink>
+        {crumbs}
     </div>
 }
 

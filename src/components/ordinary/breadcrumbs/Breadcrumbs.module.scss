@@ -12,7 +12,8 @@
 .item {
     @extend %default-text;
 
-    &_active {
+    &__active {
+        pointer-events: none;
         opacity: 0.6;
     }
 }
