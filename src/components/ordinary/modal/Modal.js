@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from 'yup'
+
 import classNames from "classnames";
 import Button from "../../UI/button/Button";
 import ButtonTransparent from "../../UI/buttonTransparent/ButtonTransparent";
@@ -8,26 +12,26 @@ import styles from './Modal.module.scss'
 
 function Modal({ modal, setModal }) {
     const [confirm, setConfirm] = useState(false)
-    const [data, setData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-    })
-    const [validation, setValidation] = useState({
-        nameError: false,
-        emailError: false,
-        phoneError: false,
+
+    const schema = yup.object({
+        name: yup.string().required('Обязательное поле'),
+        email: yup.string().required("Обязательное поле").email('Неправильная почта'),
+        phone: yup.string().required("Обязательное поле").matches(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, "Неправильный номер телефона"),
     })
 
-    function sendForm() {
+    const { handleSubmit, register, formState: { errors }, reset } = useForm({
+        shouldFocusError: false,
+        resolver: yupResolver(schema)
+    });
+    
+    const onSubmit = (data) => {
+        console.log(data)
         setConfirm(true)
-    }
+        reset()
+    };
 
     useEffect(() => {
-        if (modal) {
-            setData({name: '',email: '', phone: ''})
-            setConfirm(false)
-        }
+        modal && setConfirm(false)
     }, [modal])
 
     return <div className={classNames(styles.modal, { [`${styles.modal_active}`]: modal })} onClick={() => setModal(false)}>
@@ -36,11 +40,31 @@ function Modal({ modal, setModal }) {
                 ? <div className={styles.form}>
                     <button className={styles.close} onClick={() => setModal(false)}></button>
                     <h3 className={styles.title}>Заказать обратный звонок</h3>
-                    <form action="">
-                        <Input type="text" id="name" value={data.name} onChange={(e) => setData({ ...data, name: e.target.value })} error={validation.nameError ? "true" : "false"} placeholder="Имя"  message="Обязательное поле" />
-                        <Input type="text" id="email" value={data.email} onChange={(e) => setData({ ...data, email: e.target.value })} error={validation.emailError? "true" : "false"} placeholder="E-mail"  message="Неправильный e-mail" />
-                        <Input type="text" id="phone" value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })} error={validation.phoneError? "true" : "false"} placeholder="Телефон"  message="Неправильный номер телефона" />
-                        <Button style={{ width: '100%' }} onClick={sendForm}>Заказать звонок</Button>
+                    <form action="" onSubmit={handleSubmit(onSubmit)}>
+
+                        <Input
+                            id="name"
+                            type="text"
+                            placeholder="Имя"
+                            register={{ ...register('name') }}
+                            errorMessage={errors.name?.message}
+                        />
+                        <Input
+                            id="email"
+                            type="text"
+                            placeholder="E-mail"
+                            register={{ ...register('email') }}
+                            errorMessage={errors.email?.message}
+                        />
+                        <Input
+                            id="phone"
+                            type="number"
+                            placeholder="Телефон"
+                            register={{ ...register('phone') }}
+                            errorMessage={errors.phone?.message}
+                        />
+
+                        <Button type="submit" style={{ width: '100%' }}>Заказать звонок</Button>
                     </form>
                 </div>
                 : <div className={styles.confirm}>

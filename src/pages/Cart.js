@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import Preview from '../components/ordinary/preview/Preview'
 import Button from "../components/UI/button/Button";
@@ -8,6 +9,7 @@ import Input from "../components/UI/input/Input";
 import product from './../assets/images/product.jpg'
 import styles from './../assets/styles/Cart.module.scss';
 function Cart() {
+    const navigate = useNavigate()
     return <>
         <Preview title="Корзина" />
         <section className={styles.wrapper}>
@@ -46,7 +48,7 @@ function Cart() {
                             <h3 className={styles.info__total_title}>Итого:</h3>
                             <p className={styles.info__total_price}>$123</p>
                         </div>
-                        <Button>Оформить заказ</Button>
+                        <Button onClick={() => navigate('/checkout')}>Оформить заказ</Button>
                     </div>
                 </div>
             </div>

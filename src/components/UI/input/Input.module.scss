@@ -33,6 +33,11 @@
     @media (max-width: 425px) {
         font-size: 14px;
     }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
 }
 
 .label {

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 import Preview from "../components/ordinary/preview/Preview";
 import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
@@ -6,6 +7,7 @@ import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTranspar
 import success from './../assets/images/success.svg';
 import styles from './../assets/styles/Success.module.scss'
 function Success() {
+    const navigate = useNavigate()
     return <>
         <Preview title="Заказ получен"/>
         <section className={styles.content}>
@@ -16,7 +18,7 @@ function Success() {
                         <h2 className={styles.block__text_title}>Заказ успешно оформлен</h2>
                         <p className={styles.block__text_info}>Мы свяжемся с вами в ближайшее время!</p>
                     </div>
-                    <ButtonTransparent>Перейти на главную</ButtonTransparent>
+                    <ButtonTransparent onClick={()=> navigate('/')}>Перейти на главную</ButtonTransparent>
                 </div>
             </div>
         </section>

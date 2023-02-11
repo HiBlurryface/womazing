@@ -1,10 +1,10 @@
 import React from "react";
 import styles from './Textarea.module.scss'
 
-function Textarea(props) {
+const Textarea = ({id, placeholder, register}) => {
     return <div className={styles.wrapper}>
-        <textarea className={styles.textarea} {...props} placeholder=" " cols="30" rows="6"/>
-        <label htmlFor={props.id} className={styles.label}>{props.placeholder}</label>
+        <textarea className={styles.textarea} id={id} placeholder=" " cols="30" rows="6" {...register}/>
+        <label htmlFor={id} className={styles.label}>{placeholder}</label>
     </div>
 }
 

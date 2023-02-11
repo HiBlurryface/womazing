@@ -16,9 +16,9 @@ function Footer() {
         <div className={styles.container}>
             <div className={styles.content}>
                 <div className={styles.row}>
-                    <a href="" className={styles.logo}>
+                    <NavLink to="/" className={styles.logo}>
                         <img src={logo} alt="" className={styles.logo_icon} />Womazing
-                    </a>
+                    </NavLink>
                     <nav className={styles.nav}>
                         <ul className={styles.nav_body}>
                             {navigation.map((link, index) => {
@@ -32,10 +32,10 @@ function Footer() {
                             })}
                         </ul>
                     </nav>
-                    <a href="" className={styles.contact}>
-                        <p className={styles.contact_text}>+7 (495) 823-54-12</p>
-                        <p className={styles.contact_text}>hello@womazing.com</p>
-                    </a>
+                    <div className={styles.contact}>
+                        <a href="tel:12345678" className={styles.contact_text}>+7 (495) 823-54-12</a>
+                        <a href="mailto:hello@womazing.com" className={styles.contact_text}>hello@womazing.com</a>
+                    </div>
                 </div>
                 <div className={styles.row}>
                     <div className={styles.rights}>
@@ -45,13 +45,13 @@ function Footer() {
                     </div>
                     <div className={styles.group}>
                         <div className={styles.social}>
-                            <a href="" className={styles.social_link}>
+                            <a href="https://www.instagram.com/hiblurryface__/" className={styles.social_link}>
                                 <img src={instagramm} alt="" className={styles.social_icon} />
                             </a>
-                            <a href="" className={styles.social_link}>
+                            <a href="#" className={styles.social_link}>
                                 <img src={twitter} alt="" className={styles.social_icon} />
                             </a>
-                            <a href="" className={styles.social_link}>
+                            <a href="#" className={styles.social_link}>
                                 <img src={facebook} alt="" className={styles.social_icon} />
                             </a>
                         </div>

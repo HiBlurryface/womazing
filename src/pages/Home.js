@@ -1,6 +1,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from "swiper";
+import {useNavigate, NavLink} from 'react-router-dom';
 
 import Button from "../components/UI/button/Button";
 import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
@@ -24,6 +25,7 @@ import ProductsItem from "../components/ordinary/productsItem/ProductsItem";
 
 function Home() {
     SwiperCore.use([Pagination]);
+    const navigate = useNavigate()
 
     return <>
         <div className={styles.intro}>
@@ -54,7 +56,7 @@ function Home() {
                             <div className='intro__slider_pagination'></div>
                         </Swiper>
                         <div className={styles.intro__text_group}>
-                            <Button>Открыть магазин</Button>
+                            <Button onClick={()=> navigate('/catalog')}>Открыть магазин</Button>
                         </div>
                     </div>
                     <div className={styles.intro__img}>
@@ -79,7 +81,7 @@ function Home() {
                     <ProductsItem photo={product}/>
                     <ProductsItem photo={product}/>
                 </div>
-                <ButtonTransparent>Открыть магазин</ButtonTransparent>
+                <ButtonTransparent onClick={()=> navigate('/catalog')}>Открыть магазин</ButtonTransparent>
             </div>
         </section>
         <section className={styles.quality}>
@@ -138,7 +140,7 @@ function Home() {
                         <h3 className={styles.about__info_title}>Для каждой</h3>
                         <p className={styles.about__info_text}>Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.</p>
                         <p className={styles.about__info_text}>Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно подчеркивают достоинства каждой девушки.</p>
-                        <a href="" className={styles.about__info_link}>Подробнее о бренде</a>
+                        <NavLink to="/about-us" className={styles.about__info_link}>Подробнее о бренде</NavLink>
                     </div>
                 </div>
             </div>
