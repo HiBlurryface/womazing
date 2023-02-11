@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
@@ -30,7 +30,30 @@ function Checkout() {
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = (data) => {
+    const [paymentMethods, setPaymentMethods] = useState([
+        {
+            id: 1,
+            type: "cash",
+            title: 'Оплата наличными',
+        },
+        {
+            id: 2,
+            type: "PayPal",
+            title: 'PayPal',
+        },
+    ])
+    const [payment, setPayment] = useState('cash')
+
+    const choosePayment = (id) => {
+        console.log(id)
+        setPayment(id)
+    }
+
+    const onSubmit = (form) => {
+        const data = {
+            data: form,
+            paymentMethod: payment, 
+        }
         console.log(data)
         navigate('/success')
     };
@@ -122,11 +145,13 @@ function Checkout() {
                             <div className={styles.order__block}>
                                 <h2 className={styles.order__title}>Способы оплаты</h2>
                                 <div className={styles.order__radio}>
-                                    <label htmlFor="cash" className={styles.order__radio_label}>
-                                        <input type="radio" id="cash" name="radio-group" className={styles.order__radio_input} checked readOnly/>
-                                        <div className={styles.order__radio_mark}></div>
-                                        Оплата наличными
-                                    </label>
+                                    {paymentMethods.map(method => {
+                                        return <label htmlFor={method.type} className={styles.order__radio_label} key={method.id} onClick={() => choosePayment(method.type)}>
+                                            <input type="radio" id={method.type} value={method.id} name="payment" className={styles.order__radio_input} checked={payment === method.type ? true : false} readOnly />
+                                            <div className={styles.order__radio_mark}></div>
+                                            {method.title}
+                                        </label>
+                                    })}
                                 </div>
                                 <Button type="submit">Разместить заказ</Button>
                             </div>
