@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import classNames from 'classnames'
 
 import navigation from "../../../store/Navigation";
@@ -11,6 +11,7 @@ import shoppingCart from './../../../assets/images/shopping-cart.svg'
 import styles from './Header.module.scss';
 
 function Header() {
+    const navigate = useNavigate();
     const [isFixed, setIsFixed] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [modal, setModal] = useState(false);
@@ -29,9 +30,9 @@ function Header() {
         <header className={classNames(styles.header, {[`${styles.header_fixed}`]: isFixed})}>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <a href="" className={styles.logo}>
+                    <NavLink to={"/"} className={styles.logo}>
                         <img src={logo} alt="" className={styles.logo_icon} />Womazing
-                    </a>
+                    </NavLink>
                     <nav className={classNames(styles.nav, { [`${styles.nav_active}`]: isOpen })}>
                         <ul className={styles.nav_body}>
                             {navigation.map((link, index) => {
