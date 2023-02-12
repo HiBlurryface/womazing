@@ -1,53 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 
 import Preview from "../components/ordinary/preview/Preview";
 import ProductsItem from '../components/ordinary/productsItem/ProductsItem'
-import buttonNext from './../assets/images/slider-arrow-next.svg'
-import buttonPrev from './../assets/images/slider-arrow-prev.svg'
 
-import product from './../assets/images/product.jpg'
 import styles from './../assets/styles/Catalog.module.scss'
+import Pagination from "../components/smart/pagination/Pagination";
 
-function Catalog() {
+function Catalog({goods}) {
+    const categories = ['Все','Футболки','Свитшоты', 'Пальто', 'Свитера'];
+    const [currentCategory, setCurrentCategory] = useState(0);
+    const [items,setItems] = useState(goods)
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage, setItemsPerPage] = useState(9);
+
+    useEffect(()=> {
+        if(currentCategory===0) {
+            setItems(goods)
+        } else {
+            setItems(goods.filter(product => product.category === currentCategory))
+        }
+        setCurrentPage(1)
+    }, [goods, currentCategory])
+
+    const lastItemIndex = currentPage * itemsPerPage;
+    const firstItemIndex = lastItemIndex - itemsPerPage;
+    const currentItems = items.slice(firstItemIndex, lastItemIndex)
+
     return <>
         <Preview title="Магазин" />
         <section className={styles.filters}>
             <div className={styles.container}>
                 <div className={styles.filters__content}>
-                    <button className={classNames(styles.filters__item, styles.filters__item_active)}>Все</button>
-                    <button className={styles.filters__item}>Пальто</button>
-                    <button className={styles.filters__item}>Свитшоты</button>
-                    <button className={styles.filters__item}>Кардиганы</button>
-                    <button className={styles.filters__item}>Толстовки</button>
+                    {categories.map((category, i) => {
+                        return <button onClick={()=>setCurrentCategory(i)} type="button" className={classNames(styles.filters__item, {[`${styles.filters__item_active}`]: currentCategory === i})} key={i}>{category}</button>
+                    })}
                 </div>
             </div>
         </section>
         <section className={styles.products}>
             <div className={styles.container}>
-                <p className={styles.products__text}>Показано 9 из 12 товаров</p>
+                <p className={styles.products__text}>Показано {items.indexOf(currentItems[currentItems.length-1])+1} из {items.length} товаров</p>
                 <div className={styles.products__content}>
-                    <ProductsItem photo={product} />
-                    <ProductsItem photo={product} />
-                    <ProductsItem photo={product} />
-                    <ProductsItem photo={product} />
-                    <ProductsItem photo={product} />
-                    <ProductsItem photo={product} />
-                    <ProductsItem photo={product} />
-                    <ProductsItem photo={product} />
-                    <ProductsItem photo={product} />
+                    {currentItems.map(product => {
+                        return <ProductsItem data={product} key={product.id} />
+                    })}
                 </div>
-                <p className={styles.products__text}>Показано 9 из 12 товаров</p>
-                <div className={styles.pagination}>
-                    <button className={styles.pagination__prev}>
-                        <img src={buttonPrev} alt="" />
-                    </button>
-                    <button className={classNames(styles.pagination__button, styles.pagination__button_active)}>1</button>
-                    <button className={styles.pagination__button}>2</button>
-                    <button className={styles.pagination__next}>
-                        <img src={buttonNext} alt="" />
-                    </button>
-                </div>
+                <p className={styles.products__text}>Показано {items.indexOf(currentItems[currentItems.length-1])+1} из {items.length} товаров</p>
+                <Pagination 
+                itemsPerPage={itemsPerPage} 
+                items={items.length} 
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                />
             </div>
         </section>
     </>

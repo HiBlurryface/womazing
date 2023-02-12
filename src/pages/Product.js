@@ -50,7 +50,7 @@ function Product() {
                 </div>
             </div>
         </section>
-        <section className={styles.catalog}>
+        {/* <section className={styles.catalog}>
             <div className={styles.container}>
                 <h2 className={styles.catalog__title}>Связанные товары</h2>
                 <div className={styles.catalog__content}>
@@ -58,7 +58,7 @@ function Product() {
                     <ProductsItem photo={product}/>
                 </div>
             </div>
-        </section>
+        </section> */}
     </>
 }
 

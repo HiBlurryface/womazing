@@ -1,0 +1,33 @@
+@import './../../../assets/styles/styles';
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 60px auto 0;
+}
+
+.prev,
+.next {
+    background: transparent;
+
+    &__disabled {
+        opacity: 0.4;
+        pointer-events: none;
+    }
+}
+
+.button {
+    background: transparent;
+    width: 41px;
+    height: 41px;
+    border: 1px solid #000;
+    @extend %default-text;
+
+    &__active {
+        background: #000;
+        color: #fff;
+    }
+}

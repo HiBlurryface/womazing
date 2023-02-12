@@ -17,6 +17,7 @@
 }
 
 .bg {
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,10 +39,22 @@
     position: relative;
     width: 100%;
     object-fit: cover;
+    background: rgb(244,244,244);
+    display: flex;
+    &:before {
+        display: block;
+        padding-bottom: 125%;
+        content: ' ';
+    }
 }
 
 .photo {
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
     width: 100%;
+    height: 100%;
 }
 
 .info {

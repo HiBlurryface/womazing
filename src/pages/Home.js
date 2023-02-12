@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from "swiper";
-import {useNavigate, NavLink} from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
+import classNames from "classnames";
 
+// import goods from '../store/Goods';
+
+import ProductsItem from "../components/ordinary/productsItem/ProductsItem";
 import Button from "../components/UI/button/Button";
 import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
 
 import introImg from './../assets/images/intro-img-1.jpg'
 import introPhotoTop from './../assets/images/intro-img-4.jpg'
 import introPhotoBottom from './../assets/images/intro-img-5.jpg'
-import product from './../assets/images/product.jpg'
 import quality1 from './../assets/images/quality-img-1.svg'
 import quality2 from './../assets/images/quality-img-2.svg'
 import quality3 from './../assets/images/quality-img-3.svg'
@@ -20,10 +23,8 @@ import about3 from './../assets/images/about-img-3.jpg'
 import 'swiper/css';
 import './../assets/styles/swiper.scss'
 import styles from './../assets/styles/Home.module.scss'
-import classNames from "classnames";
-import ProductsItem from "../components/ordinary/productsItem/ProductsItem";
 
-function Home() {
+function Home({goods}) {
     SwiperCore.use([Pagination]);
     const navigate = useNavigate()
 
@@ -56,7 +57,7 @@ function Home() {
                             <div className='intro__slider_pagination'></div>
                         </Swiper>
                         <div className={styles.intro__text_group}>
-                            <Button onClick={()=> navigate('/catalog')}>Открыть магазин</Button>
+                            <Button onClick={() => navigate('/catalog')}>Открыть магазин</Button>
                         </div>
                     </div>
                     <div className={styles.intro__img}>
@@ -75,13 +76,13 @@ function Home() {
         </div>
         <section className={styles.products}>
             <div className={styles.container}>
-                <h2 className={styles.products__title}>Новая коллекция</h2>
+                <h2 className={styles.products__title}>Новые товары</h2>
                 <div className={styles.products__content}>
-                    <ProductsItem photo={product}/>
-                    <ProductsItem photo={product}/>
-                    <ProductsItem photo={product}/>
+                    {goods.map((product, index) => {
+                        if(index > goods.length-4) {return <ProductsItem data={product} key={product.id} />}
+                    })}
                 </div>
-                <ButtonTransparent onClick={()=> navigate('/catalog')}>Открыть магазин</ButtonTransparent>
+                <ButtonTransparent onClick={() => navigate('/catalog')}>Открыть магазин</ButtonTransparent>
             </div>
         </section>
         <section className={styles.quality}>

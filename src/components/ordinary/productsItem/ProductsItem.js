@@ -2,7 +2,7 @@ import React from "react";
 
 
 import styles from './ProductsItem.module.scss'
-function ProductsItem({photo}) {
+function ProductsItem({data}) {
     return <a href="" className={styles.block}>
         <div className={styles.img}>
             <div className={styles.bg}>
@@ -10,11 +10,11 @@ function ProductsItem({photo}) {
                     <path d="M8 0V28M8 28L1 20.8108M8 28L15 20.8108" stroke="#FFF" />
                 </svg>
             </div>
-            <img src={photo} alt="" className={styles.photo} />
+            <img src={data.photo} alt="" className={styles.photo} />
         </div>
         <div className={styles.info}>
-            <h4 className={styles.title}>Футболка</h4>
-            <p className={styles.price}>$129</p>
+            <h4 className={styles.title}>{data.title}</h4>
+            <p className={styles.price}>{data.price}</p>
         </div>
     </a>
 }
