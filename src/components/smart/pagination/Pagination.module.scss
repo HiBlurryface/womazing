@@ -7,16 +7,27 @@
     gap: 10px;
     width: fit-content;
     margin: 60px auto 0;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .prev,
 .next {
     background: transparent;
-
+    bottom: -30px;
+    @media (max-width: 375px) {
+        position: absolute;
+    }
     &__disabled {
         opacity: 0.4;
         pointer-events: none;
     }
+}
+.prev {
+    right: 60%;
+}
+.next {
+    left: 60%;
 }
 
 .button {
@@ -30,4 +41,7 @@
         background: #000;
         color: #fff;
     }
+}
+button {
+    margin: unset !important;
 }
