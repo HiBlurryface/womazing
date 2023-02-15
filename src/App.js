@@ -11,7 +11,7 @@ import Contacts from './pages/Contacts'
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Success from './pages/Success';
-import PageNotFound from './pages/PageNotFound';
+import PageNotFound from './pages/PageNotFound';  
 
 import './assets/styles/main.scss'
 
@@ -32,7 +32,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home goods={goods}/>} />
             <Route path="catalog" element={<Catalog goods={goods}/>} />
-            <Route path="product" element={<Product />} />
+            <Route path="product/:id" element={<Product goods={goods}/>} />
             <Route path="about-us" element={<About />} />
             <Route path="contacts" element={<Contacts />} />
             <Route path="cart" element={<Cart />} />

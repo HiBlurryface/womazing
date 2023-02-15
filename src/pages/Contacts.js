@@ -88,7 +88,7 @@ function Contacts() {
                             errorMessage={errors.phone?.message}
                         />
                         <Textarea id="message" placeholder="Сообщение" register={{ ...register('message') }}></Textarea>
-                        <Button type="submit">Отправить</Button>
+                        <Button type="submit" style={{marginTop: "30px"}}>Отправить</Button>
                     </form>
                     <span className={classNames(styles.form__message, { [`${styles.form__message_active}`]: showMessage })}>
                         Сообщение успешно отправлено

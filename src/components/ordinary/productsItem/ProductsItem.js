@@ -1,9 +1,9 @@
 import React from "react";
-
+import { NavLink } from "react-router-dom";
 
 import styles from './ProductsItem.module.scss'
 function ProductsItem({data}) {
-    return <a href="" className={styles.block}>
+    return <NavLink to={`/product/${data.id}`} className={styles.block}>
         <div className={styles.img}>
             <div className={styles.bg}>
                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -16,7 +16,7 @@ function ProductsItem({data}) {
             <h4 className={styles.title}>{data.title}</h4>
             <p className={styles.price}>{data.price}</p>
         </div>
-    </a>
+    </NavLink>
 }
 
 export default ProductsItem;

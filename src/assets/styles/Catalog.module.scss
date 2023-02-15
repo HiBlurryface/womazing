@@ -17,12 +17,18 @@
         padding: 20px 65px;
         background: transparent;
         @extend %default-text;
-
+        @extend %main-transition;
         @media (max-width: 1024px) {
             padding: 15px 45px;
         }
 
         &_active {
+            @extend %main-transition;
+            background: #000;
+            color: #fff;
+        }
+        &:hover {
+            @extend %main-transition;
             background: #000;
             color: #fff;
         }
@@ -56,9 +62,5 @@
 
     &__text {
         color: #808080;
-    }
-
-    & button {
-        margin: 0px auto;
     }
 }

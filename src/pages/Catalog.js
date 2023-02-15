@@ -42,7 +42,7 @@ function Catalog({goods}) {
             <div className={styles.container}>
                 <p className={styles.products__text}>Показано {items.indexOf(currentItems[currentItems.length-1])+1} из {items.length} товаров</p>
                 <div className={styles.products__content}>
-                    {currentItems.map(product => {
+                    {currentItems.map((product) => {
                         return <ProductsItem data={product} key={product.id} />
                     })}
                 </div>
