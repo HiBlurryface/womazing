@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import classNames from 'classnames'
+import { useDispatch, useSelector } from 'react-redux';
 
 import navigation from "../../../store/Navigation";
 import Modal from "./../modal/Modal";
@@ -11,6 +12,9 @@ import shoppingCart from './../../../assets/images/shopping-cart.svg'
 import styles from './Header.module.scss';
 
 function Header() {
+    const dispatch = useDispatch();
+    const cart = useSelector(state=>state)
+
     const navigate = useNavigate();
     const [isFixed, setIsFixed] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -58,7 +62,7 @@ function Header() {
                     </button>
                     <NavLink to="/cart" className={styles.cart}>
                         <img src={shoppingCart} className={styles.cart_icon} />
-                        {/* <span className={styles.cart_items}>0</span> */}
+                        {cart.length > 0 && <span className={styles.cart_items}>{cart.length}</span>}
                     </NavLink>
                     <button type="button" className={classNames(styles.burger, { [`${styles.burger_active}`]: isOpen })} onClick={() => setIsOpen(!isOpen)}>
                         <span></span>

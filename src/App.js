@@ -14,7 +14,6 @@ import Success from './pages/Success';
 import PageNotFound from './pages/PageNotFound';  
 
 import './assets/styles/main.scss'
-
 function App() {
   const [goods, setGoods] = useState([])
   useEffect(()=> {
@@ -24,7 +23,7 @@ function App() {
       setGoods(arr)
     })
   }, [])
-
+  
   return <div className='body__wrapper'>
     <Router>
       <ScrollToTop />

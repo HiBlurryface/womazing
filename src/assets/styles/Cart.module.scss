@@ -3,7 +3,9 @@
 .container {
     @extend %container;
 }
-
+.cart {
+    @extend %title-H3;
+}
 .header {
     padding-bottom: 36px;
     margin-bottom: 48px;

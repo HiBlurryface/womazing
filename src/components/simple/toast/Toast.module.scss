@@ -1,0 +1,20 @@
+@import './../../../assets/styles/styles'; 
+
+.wrapper {
+    position: fixed;
+    background: #000;
+    border-radius: 50px;
+    color: #fff;
+    top: 120px;
+    right: 30px;
+    padding: 24px 50px;
+    @extend %default-text;
+    @extend %main-transition;
+    opacity: 0;
+    visibility: hidden;
+    &_show {
+        @extend %main-transition;
+        opacity: 1;
+        visibility: visible;
+    }
+}

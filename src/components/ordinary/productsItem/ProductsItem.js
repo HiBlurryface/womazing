@@ -14,7 +14,7 @@ function ProductsItem({data}) {
         </div>
         <div className={styles.info}>
             <h4 className={styles.title}>{data.title}</h4>
-            <p className={styles.price}>{data.price}</p>
+            <p className={styles.price}>${data.price}</p>
         </div>
     </NavLink>
 }

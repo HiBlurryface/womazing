@@ -78,8 +78,17 @@
     &__option {
         @extend %title-H4;
         padding-bottom: 35px;
+        position: relative;
         @media (max-width: 768px) {
             padding-bottom: 20px;
+        }
+        &_error {
+            position: absolute;
+            top: -15px;
+            left: 0;
+            color: #e50012;
+            font-size: 12px;
+            line-height: 14px;
         }
     }
 
@@ -88,18 +97,23 @@
         align-items: center;
         gap: 14px;
         flex-wrap: wrap;
-
         &_btn {
+            padding: 0 9px;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 41px;
+            min-width: 41px;
             height: 41px;
             border: 1px solid #000000;
             background: transparent;
             @extend %default-text;
-
+            @extend %main-transition;
             &_active {
+                background: #000;
+                color: #fff;
+            }
+            &:hover {
+                @extend %main-transition;
                 background: #000;
                 color: #fff;
             }
@@ -111,14 +125,18 @@
         align-items: center;
         gap: 14px;
         flex-wrap: wrap;
-
         &_btn {
             width: 41px;
             height: 41px;
             border-radius: 100px;
-
+            border: 1px solid transparent;
+            @extend %main-transition;
             &_active {
                 border: 1px solid #000000;
+            }
+            &:hover {
+                border: 1px solid #000;
+                @extend %main-transition;
             }
         }
     }
@@ -140,6 +158,10 @@
         text-align: center;
         letter-spacing: 0.02em;
         color: #000000;
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
         @media (max-width: 1024px){
             height: 50px;
             width: 50px;

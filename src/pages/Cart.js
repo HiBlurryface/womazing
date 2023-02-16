@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { removeProductAction } from "../store/cartReducer";
 
 import Preview from '../components/ordinary/preview/Preview'
 import Button from "../components/UI/button/Button";
 import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
 import Input from "../components/UI/input/Input";
 
-import product from './../assets/images/product.jpg'
 import styles from './../assets/styles/Cart.module.scss';
 function Cart() {
+    const dispatch = useDispatch();
+    const cart = useSelector(state => state);
     const navigate = useNavigate()
+
+    const [totalPrice, setTotalPrice] = useState(0);
+    useEffect(() => {
+        cart.length > 0 && setTotalPrice(cart.map(item => item.totalPrice).reduce((a, b) => a + b))
+    }, [cart])
     return <>
         <Preview title="Корзина" />
         <section className={styles.wrapper}>
@@ -21,32 +29,35 @@ function Cart() {
                         <h2 className={styles.header__title}>Количество</h2>
                         <h2 className={styles.header__title}>Всего</h2>
                     </div>
-                    <div className={styles.item}>
-                        <div className={styles.item__details}>
-                            <button className={styles.item__details_delete}></button>
-                            <img src={product} alt="" className={styles.item__details_photo} />
-                            <h3 className={styles.item__details_title}>Футболка USA</h3>
-                        </div>
-                        {/* <div className={styles.item__group}> */}
-                        <p className={styles.item__cost}>123$</p>
-                        <div className={styles.item__count}>
-                            <p className={styles.item__count_text}>1</p>
-                        </div>
-                        <p className={styles.item__totalPrice}>123$</p>
-                        {/* </div> */}
-                    </div>
+                    {cart.length === 0
+                        ? <h2 className={styles.cart}>Корзина пустая</h2>
+                        : cart.map(item => {
+                            return <div className={styles.item} key={item.id}>
+                                <div className={styles.item__details}>
+                                    <button className={styles.item__details_delete} onClick={() => dispatch(removeProductAction(item.id))}></button>
+                                    <img src={item.photo} alt="Photo" className={styles.item__details_photo} />
+                                    <h3 className={styles.item__details_title}>{item.title}</h3>
+                                </div>
+                                <p className={styles.item__cost}>${item.price}</p>
+                                <div className={styles.item__count}>
+                                    <p className={styles.item__count_text}>{item.count}</p>
+                                </div>
+                                <p className={styles.item__totalPrice}>${item.totalPrice}</p>
+                            </div>
+                        })
+                    }
                 </div>
                 <div className={styles.group}>
                     <Input placeholder="Введите купон" style={{ maxWidth: '255px' }} />
                     <ButtonTransparent>Применить купон</ButtonTransparent>
-                    <ButtonTransparent>Обновить корзину</ButtonTransparent>
+                    <ButtonTransparent onClick={() => navigate('/catalog')}>Обновить корзину</ButtonTransparent>
                 </div>
                 <div className={styles.info}>
-                    <p className={styles.info__price}>Подытог: $123</p>
+                    <p className={styles.info__price}>Подытог: ${totalPrice}</p>
                     <div className={styles.info__group}>
                         <div className={styles.info__total}>
                             <h3 className={styles.info__total_title}>Итого:</h3>
-                            <p className={styles.info__total_price}>$123</p>
+                            <p className={styles.info__total_price}>${totalPrice}</p>
                         </div>
                         <Button onClick={() => navigate('/checkout')}>Оформить заказ</Button>
                     </div>
