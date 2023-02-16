@@ -1,0 +1,342 @@
+[
+    {
+      "id": 1,
+      "category": 1,
+      "title": "Футболка USA",
+      "price": 129,
+      "photo": "https://drive.google.com/uc?export=view&id=1RR08Kd-58JQEEiNFLlJFbhMMgd9kiovj",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 2,
+      "category": 1,
+      "title": "Футболка Аниме",
+      "price": 99,
+      "photo": "https://drive.google.com/uc?export=view&id=13MmFq8i_9UpUWfoqjDxIEDD8CzMIOACn",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 3,
+      "category": 1,
+      "title": "Футболка Пивозавр",
+      "price": 312,
+      "photo": "https://drive.google.com/uc?export=view&id=1aRamYz-fCiTCffT4Ym7qHVss2L37rwmv",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 4,
+      "category": 1,
+      "title": "Футболка 404",
+      "price": 69,
+      "photo": "https://drive.google.com/uc?export=view&id=1egLIlQe86De-0GBzqjBtGPNkh7Hf-Lpj",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 5,
+      "category": 1,
+      "title": "Футболка АПивасБуде",
+      "price": 10,
+      "photo": "https://drive.google.com/uc?export=view&id=1-FBUZaXugkqsHSQGTCYULSJs_V9bsiPU",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 6,
+      "category": 1,
+      "title": "Футболка Зумер",
+      "price": 1,
+      "photo": "https://drive.google.com/uc?export=view&id=1Tlt3AchULeOZbIb5U9g62PP5eODfvcL7",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 7,
+      "category": 1,
+      "title": "Футболка Кот",
+      "price": 99,
+      "photo": "https://drive.google.com/uc?export=view&id=1aWqv5p-w2m_nrTtAmTya0STKLLVkAu1q",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 8,
+      "category": 2,
+      "title": "Свитшот ЧелТы",
+      "price": 99,
+      "photo": "https://drive.google.com/uc?export=view&id=1ZSNceISMYHuQ4sbPmzGZpxfZkmGDhz-h",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 9,
+      "category": 2,
+      "title": "Свитшот Рысь",
+      "price": 214,
+      "photo": "https://drive.google.com/uc?export=view&id=1wK5fcYk9BZ2QyZ4-VCTZ7wIW_BgL06Ag",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 10,
+      "category": 2,
+      "title": "Свитшот ICan't",
+      "price": 214,
+      "photo": "https://drive.google.com/uc?export=view&id=1TFFcBf2YAb8_faG30VjCUpATQvdYq7vo",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 11,
+      "category": 3,
+      "title": "Пальто Женское",
+      "price": 120,
+      "photo": "https://drive.google.com/uc?export=view&id=1K7vTVU9zEq6Q5u2fXFYFRgfmzyWkqtA7",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 12,
+      "category": 3,
+      "title": "Пальто Мужское",
+      "price": 999,
+      "photo": "https://drive.google.com/uc?export=view&id=1m1zTRbl32xT65VQwOL8FhDH6ajfy8uy1",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 13,
+      "category": 3,
+      "title": "Пальто Женское тоже",
+      "price": 300,
+      "photo": "https://drive.google.com/uc?export=view&id=1tUxpyzXdizEuugj2KNjZTVxVTrNRBG6S",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 14,
+      "category": 4,
+      "title": "Свитер Женский",
+      "price": 35,
+      "photo": "https://drive.google.com/uc?export=view&id=1zMul-vSdF5E7m7FMp0Pj-unLnhmiEn-x",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 15,
+      "category": 4,
+      "title": "Свитер Брат",
+      "price": 999,
+      "photo": "https://drive.google.com/uc?export=view&id=1vehDih8k65dXzmo5WtC4dhLrvg98ffWC",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 16,
+      "category": 4,
+      "title": "Свитер Бирюзовый",
+      "price": 99,
+      "photo": "https://drive.google.com/uc?export=view&id=1FDBx3tQ43PIFzaekVCjbdlP2EU52GvdY",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    },
+    {
+      "id": 17,
+      "category": 4,
+      "title": "Свитер Короткий",
+      "price": 10,
+      "photo": "https://drive.google.com/uc?export=view&id=1Memwwdzi57zy0Zip9rOlYx-_BELFBfGC",
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "colors": [
+        "#927876",
+        "#D5D5D5",
+        "#FD9696",
+        "#FDC796"
+      ]
+    }
+  ]
