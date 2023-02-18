@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import classNames from "classnames";
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { addProductAction } from "../store/cartReducer";
 
 import Preview from "../components/ordinary/preview/Preview";
 import ProductsItem from "../components/ordinary/productsItem/ProductsItem";
@@ -9,7 +10,6 @@ import Button from "../components/UI/button/Button";
 
 import styles from './../assets/styles/Product.module.scss'
 import Toast from "../components/simple/toast/Toast";
-import { addProductAction } from "../store/cartReducer";
 function Product({ goods }) {
     const dispatch = useDispatch()
 

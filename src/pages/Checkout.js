@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
+import { useDispatch, useSelector } from 'react-redux';
+import { clearCart } from "../store/cartReducer";
 import * as yup from 'yup'
 
 import Preview from "../components/ordinary/preview/Preview";
@@ -12,6 +14,9 @@ import styles from './../assets/styles/Checkout.module.scss';
 import Textarea from "../components/UI/textarea/Textarea";
 
 function Checkout() {
+    const dispatch = useDispatch();
+    const checkout = useSelector(state => state.checkout);
+    const cart = useSelector(state => state.cart);
     const navigate = useNavigate()
     const schema = yup.object({
         name: yup.string().required('Обязательное поле'),
@@ -44,18 +49,15 @@ function Checkout() {
     ])
     const [payment, setPayment] = useState('cash')
 
-    const choosePayment = (id) => {
-        console.log(id)
-        setPayment(id)
-    }
-
     const onSubmit = (form) => {
         const data = {
             data: form,
-            paymentMethod: payment, 
+            paymentMethod: payment,
+            products: checkout,
         }
         console.log(data)
         navigate('/checkout/success')
+        dispatch(clearCart([]))
     };
 
     return <>
@@ -137,16 +139,18 @@ function Checkout() {
                                 <h2 className={styles.order__title}>Ваш заказ</h2>
                                 <ul className={styles.order__list}>
                                     <li className={styles.order__list_header}>Товар<span>Всего</span></li>
-                                    <li className={styles.order__list_item}>Футболка УСА<span>$123</span></li>
-                                    <li className={styles.order__list_price}>Подытог<span>$123</span></li>
-                                    <li className={styles.order__list_total}>Итого<span>$123</span></li>
+                                    {checkout.products.map(item => {
+                                        return <li className={styles.order__list_item} key={item.id}>{item.title}<span>${item.totalPrice}</span></li>
+                                    })}
+                                    <li className={styles.order__list_price}>Подытог<span>${checkout.price}</span></li>
+                                    <li className={styles.order__list_total}>Итого<span>${checkout.price}</span></li>
                                 </ul>
                             </div>
                             <div className={styles.order__block}>
                                 <h2 className={styles.order__title}>Способы оплаты</h2>
                                 <div className={styles.order__radio}>
                                     {paymentMethods.map(method => {
-                                        return <label htmlFor={method.type} className={styles.order__radio_label} key={method.id} onClick={() => choosePayment(method.type)}>
+                                        return <label htmlFor={method.type} className={styles.order__radio_label} key={method.id} onClick={() => setPayment(method.type)}>
                                             <input type="radio" id={method.type} value={method.id} name="payment" className={styles.order__radio_input} checked={payment === method.type ? true : false} readOnly />
                                             <div className={styles.order__radio_mark}></div>
                                             {method.title}

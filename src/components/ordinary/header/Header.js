@@ -13,8 +13,7 @@ import styles from './Header.module.scss';
 
 function Header() {
     const dispatch = useDispatch();
-    const cart = useSelector(state=>state)
-
+    const cart = useSelector(state=>state.cart);
     const navigate = useNavigate();
     const [isFixed, setIsFixed] = useState(false);
     const [isOpen, setIsOpen] = useState(false);

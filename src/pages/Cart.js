@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { removeProductAction } from "../store/cartReducer";
+import { getData } from "../store/checkoutReducer";
 
 import Preview from '../components/ordinary/preview/Preview'
 import Button from "../components/UI/button/Button";
@@ -11,13 +12,25 @@ import Input from "../components/UI/input/Input";
 import styles from './../assets/styles/Cart.module.scss';
 function Cart() {
     const dispatch = useDispatch();
-    const cart = useSelector(state => state);
-    const navigate = useNavigate()
+    const cart = useSelector(state => state.cart);
 
+    const navigate = useNavigate()
     const [totalPrice, setTotalPrice] = useState(0);
+    const [data, setData] = useState({
+        products: cart,
+        price: totalPrice,
+    });
     useEffect(() => {
         cart.length > 0 && setTotalPrice(cart.map(item => item.totalPrice).reduce((a, b) => a + b))
     }, [cart])
+
+    function confirm() {
+        dispatch(getData({
+            products: cart,
+            price: totalPrice,
+        }))
+        navigate('/checkout');
+    }
     return <>
         <Preview title="Корзина" />
         <section className={styles.wrapper}>
@@ -59,7 +72,7 @@ function Cart() {
                             <h3 className={styles.info__total_title}>Итого:</h3>
                             <p className={styles.info__total_price}>${totalPrice}</p>
                         </div>
-                        <Button onClick={() => navigate('/checkout')}>Оформить заказ</Button>
+                        <Button onClick={() => confirm()}>Оформить заказ</Button>
                     </div>
                 </div>
             </div>

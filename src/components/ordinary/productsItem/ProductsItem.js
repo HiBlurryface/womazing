@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 import styles from './ProductsItem.module.scss'
 function ProductsItem({data}) {
     return <NavLink to={`/product/${data.id}`} className={styles.block}>
