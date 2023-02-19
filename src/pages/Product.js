@@ -12,60 +12,57 @@ import styles from './../assets/styles/Product.module.scss'
 import Toast from "../components/simple/toast/Toast";
 function Product({ goods }) {
     const dispatch = useDispatch()
-
     const { id } = useParams()
     const product = goods.filter(item => item.id == id)[0];
-    const [similarProducts, setSimilarProducts] = useState([]);
-    const [newProduct, setNewProduct] = useState({})
+    const [similarProducts, setSimilarProducts] = useState(goods.filter(item => (item.category === product.category && item.id != id)).sort(() => Math.random() - 0.5));
+    const [productSettings, setProductSettings] = useState({});
+    const [selectedSize, setSelectedSize] = useState(null);
+    const [selectedColor, setSelectedColor] = useState(null);
     const [count, setCount] = useState(1);
-    const [message, setMessage] = useState({
-        show: false,
-        text: '',
+    const [toast, setToast] = useState({
+        isActive: false,
+        message: '',
     })
     const min = 1;
-    const max = 100;
-    
+    const max = 99;
     useEffect(() => {
-        setSimilarProducts(goods.filter(item => (item.category === product.category && item.id != id)).sort(() => Math.random() - 0.5));
-    }, [goods])
-
+        if (product !== undefined) {
+            setProductSettings({
+                id: product.id,
+                category: product.category,
+                photo: product.photo,
+                title: product.title,
+                price: product.price,
+                size: selectedSize,
+                color: selectedColor,
+                count: count,
+                totalPrice: product.price * count
+            })
+        }
+    }, [product, selectedSize, selectedColor, count]);
     useEffect(()=> {
-        product != undefined && setNewProduct({
-            id: product.id,
-            category: product.category,
-            photo: product.photo,
-            title: product.title,
-            price: product.price,
-            size: null,
-            color: null,
-            count: count,
-            totalPrice: product.price * count
-        })
-    }, [product, count])
-
-    function onChange(e) {
-        const value = Math.max(min, Math.min(max, Number(e.target.value)));
-        setCount(value);
+        resetSettings();
+        setSimilarProducts(goods.filter(item => (item.category === product.category && item.id != id)).sort(() => Math.random() - 0.5));
+    }, [product])
+    function resetSettings() {
+        setSelectedSize(null);
+        setSelectedColor(null);
+        setCount(1);
     }
-
     function addToCart() {
-        if(newProduct.color != null && newProduct.size != null) {
-            dispatch(addProductAction(newProduct))
-            setNewProduct({...newProduct, size: null, color: null})
-            setCount(1)
-            setMessage({...message, show:true, text: 'Товар добавлен в корзину'})
-            setTimeout(() => {
-                setMessage({...message, show:false, text: 'Товар добавлен в корзину'})
-            }, 2000);
+        selectedSize === null && setSelectedSize(undefined);
+        selectedColor === null && setSelectedColor(undefined);
+
+        if (productSettings.size != undefined && productSettings.color != undefined) {
+            dispatch(addProductAction(productSettings))
+            setToast({ ...toast, isActive: true, message: 'Товар добавлен в корзину' })
+            resetSettings();
         } else {
-            setMessage({...message, show:true, text: 'Невыбраны обязательные параметры'})
-            setTimeout(() => {
-                setMessage({...message, show:false, text: 'Невыбраны обязательные параметры'})
-            }, 2000);
+            setToast({ ...toast, isActive: true, message: 'Невыбраны все обязательные параметры' })
         }
     }
 
-    return goods.length === 0
+    return product === undefined
         ? <Preview title="Загрузка..." />
         : <>
             <Preview title={product.title} />
@@ -83,23 +80,27 @@ function Product({ goods }) {
                                 </h2>
                             </div>
                             <div className={styles.item__group}>
-                                <p className={styles.item__option}>Выберите размер {newProduct.size === null && <span className={styles.item__option_error}>Обязательный параметр</span>}</p>
+                                <p className={styles.item__option}>Выберите размер
+                                    {selectedSize === undefined && <span className={styles.item__option_error}>Обязательный параметр</span>}
+                                </p>
                                 <div className={styles.item__size}>
                                     {product.sizes.map((size, index) => {
-                                        return <button onClick={()=>setNewProduct({...newProduct, size: size})} key={index} className={classNames(styles.item__size_btn, { [`${styles.item__size_btn_active}`]: newProduct.size === size })}>{size}</button>
+                                        return <button onClick={() => setSelectedSize(size)} key={index} className={classNames(styles.item__size_btn, { [`${styles.item__size_btn_active}`]: selectedSize === size })}>{size}</button>
                                     })}
                                 </div>
                             </div>
                             <div className={styles.item__group}>
-                                <p className={styles.item__option}>Выберите цвет {newProduct.color === null && <span className={styles.item__option_error}>Обязательный параметр</span>}</p>
+                                <p className={styles.item__option}>Выберите цвет
+                                    {selectedColor === undefined && <span className={styles.item__option_error}>Обязательный параметр</span>}
+                                </p>
                                 <div className={styles.item__color}>
                                     {product.colors.map((color, index) => {
-                                        return <button onClick={()=>setNewProduct({...newProduct, color: color})} key={index} className={classNames(styles.item__color_btn, { [`${styles.item__color_btn_active}`]: newProduct.color === color })} style={{ backgroundColor: color }}></button>
+                                        return <button onClick={() => setSelectedColor(color)} key={index} className={classNames(styles.item__color_btn, { [`${styles.item__color_btn_active}`]: selectedColor === color })} style={{ backgroundColor: color }}></button>
                                     })}
                                 </div>
                             </div>
                             <div className={styles.item__buy}>
-                                <input type="number" className={styles.item__count} min={min} max={max} value={count} onChange={e => onChange(e)}/>
+                                <input type="number" value={count} onChange={e => setCount(Math.max(min, Math.min(max, Number(e.target.value))))} className={styles.item__count} />
                                 <Button type="button" onClick={addToCart}>Добавить в корзину</Button>
                             </div>
                         </div>
@@ -116,7 +117,7 @@ function Product({ goods }) {
                     </div>
                 </div>
             </section>
-            <Toast show={message.show}>{message.text}</Toast>
+            <Toast toast={toast} setToast={setToast} />
         </>
 }
 

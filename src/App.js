@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import ScrollToTop from './utils/scrollToTop';
 
 import Layout from './pages/Layout';
@@ -22,8 +22,7 @@ function App() {
     .then((arr) => {
       setGoods(arr)
     })
-  }, [])
-  
+  }, [])  
   return <div className='body__wrapper'>
     <Router>
       <ScrollToTop />

@@ -44,8 +44,8 @@ function Cart() {
                     </div>
                     {cart.length === 0
                         ? <h2 className={styles.cart}>Корзина пустая</h2>
-                        : cart.map(item => {
-                            return <div className={styles.item} key={item.id}>
+                        : cart.map((item, index) => {
+                            return <div className={styles.item} key={index}>
                                 <div className={styles.item__details}>
                                     <button className={styles.item__details_delete} onClick={() => dispatch(removeProductAction(item.id))}></button>
                                     <img src={item.photo} alt="Photo" className={styles.item__details_photo} />
