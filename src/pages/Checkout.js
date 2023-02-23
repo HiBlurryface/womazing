@@ -35,6 +35,8 @@ function Checkout() {
         resolver: yupResolver(schema)
     });
 
+    console.log(checkout)
+
     const [paymentMethods, setPaymentMethods] = useState([
         {
             id: 1,
@@ -53,13 +55,13 @@ function Checkout() {
         const data = {
             data: form,
             paymentMethod: payment,
-            products: checkout,
+            order: checkout,
         }
         console.log(data)
         navigate('/checkout/success')
         dispatch(clearCart([]))
     };
-
+    
     return <>
         <Preview title="Оформление заказа" />
         <section className={styles.order}>
@@ -143,7 +145,8 @@ function Checkout() {
                                         return <li className={styles.order__list_item} key={item.id}>{item.title}<span>${item.totalPrice}</span></li>
                                     })}
                                     <li className={styles.order__list_price}>Подытог<span>${checkout.price}</span></li>
-                                    <li className={styles.order__list_total}>Итого<span>${checkout.price}</span></li>
+                                    {checkout.discount != null && <li className={styles.order__list_price} style={{color: '#e50012'}}>Скидка<span>{checkout.discount}%</span></li>}
+                                    <li className={styles.order__list_total}>Итого<span>${checkout.discountedPrice}</span></li>
                                 </ul>
                             </div>
                             <div className={styles.order__block}>

@@ -10,27 +10,40 @@ import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTranspar
 import Input from "../components/UI/input/Input";
 
 import styles from './../assets/styles/Cart.module.scss';
-function Cart() {
+function Cart({promocodes}) {
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart);
 
     const navigate = useNavigate()
     const [totalPrice, setTotalPrice] = useState(0);
-    const [data, setData] = useState({
-        products: cart,
-        price: totalPrice,
-    });
+    const [discountedPrice, setDiscountedPrice] = useState(0);
+    const [promocode,setPromocode] = useState('')
+    const [discount, setDiscount] = useState(null)
+    
     useEffect(() => {
         cart.length > 0 && setTotalPrice(cart.map(item => item.totalPrice).reduce((a, b) => a + b))
     }, [cart])
+    useEffect(() => {
+        discount === null 
+        ? setDiscountedPrice(totalPrice.toFixed(2))
+        : setDiscountedPrice((totalPrice-(totalPrice * discount / 100)).toFixed(2))
+    }, [totalPrice,discount])
 
     function confirm() {
         dispatch(getData({
             products: cart,
             price: totalPrice,
+            discount: discount,
+            discountedPrice: discountedPrice
         }))
         navigate('/checkout');
     }
+    function addPromocode() {
+        promocodes.find(item => item.title === promocode)!==undefined 
+        ? setDiscount(promocodes.find(item => item.title === promocode).discount)
+        : setDiscount(null)
+    }
+
     return <>
         <Preview title="Корзина" />
         <section className={styles.wrapper}>
@@ -61,8 +74,9 @@ function Cart() {
                     }
                 </div>
                 <div className={styles.group}>
-                    <Input placeholder="Введите купон" style={{ maxWidth: '255px' }} />
-                    <ButtonTransparent>Применить купон</ButtonTransparent>
+                    {/* <Input placeholder="Введите купон" style={{ maxWidth: '255px' }} value={promocode} onChange={e=>setPromocode(e.target.value)}/> */}
+                    <input placeholder="Введите купон" style={{ maxWidth: '255px' }} value={promocode} onChange={e=>setPromocode(e.target.value)}/>
+                    <ButtonTransparent onClick={()=>addPromocode()}>Применить купон</ButtonTransparent>
                     <ButtonTransparent onClick={() => navigate('/catalog')}>Обновить корзину</ButtonTransparent>
                 </div>
                 <div className={styles.info}>
@@ -70,7 +84,7 @@ function Cart() {
                     <div className={styles.info__group}>
                         <div className={styles.info__total}>
                             <h3 className={styles.info__total_title}>Итого:</h3>
-                            <p className={styles.info__total_price}>${totalPrice}</p>
+                            <p className={styles.info__total_price}>${discountedPrice}</p>
                         </div>
                         <Button onClick={() => confirm()}>Оформить заказ</Button>
                     </div>
