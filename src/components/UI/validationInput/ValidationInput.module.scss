@@ -1,0 +1,76 @@
+@import './../../../assets/styles/_styles.scss';
+
+.wrapper {
+    position: relative;
+}
+
+.input {
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+    background: transparent;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #000000;
+
+    &:focus~label {
+        top: -22px;
+        font-size: 13px;
+        @extend %main-transition;
+    }
+
+    &:not(:placeholder-shown)~label {
+        top: -22px;
+        font-size: 13px;
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 425px) {
+        font-size: 14px;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+}
+
+.label {
+    cursor: text;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #868686;
+
+    @extend %main-transition;
+
+    @media (max-width: 1024px) {
+        font-size: 15px;
+    }
+
+    @media (max-width: 425px) {
+        font-size: 14px;
+    }
+}
+
+.error {
+    position: absolute;
+    top: -22px;
+    right: 0;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 140%;
+    letter-spacing: 0.02em;
+    color: #E50012;
+}

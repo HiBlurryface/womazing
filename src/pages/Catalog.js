@@ -8,7 +8,7 @@ import styles from './../assets/styles/Catalog.module.scss'
 import Pagination from "../components/smart/pagination/Pagination";
 
 function Catalog({goods}) {
-    const categories = ['Все','Футболки','Свитшоты', 'Пальто', 'Свитера'];
+    const categories = ['All','T-Shirts','Sweatshirts', 'Coat', 'Sweaters'];
     const [currentCategory, setCurrentCategory] = useState(0);
     const [items,setItems] = useState(goods)
     const [currentPage, setCurrentPage] = useState(1);
@@ -28,7 +28,7 @@ function Catalog({goods}) {
     const currentItems = items.slice(firstItemIndex, lastItemIndex)
 
     return <>
-        <Preview title="Магазин" />
+        <Preview title="Catalog" />
         <section className={styles.filters}>
             <div className={styles.container}>
                 <div className={styles.filters__content}>
@@ -40,13 +40,13 @@ function Catalog({goods}) {
         </section>
         <section className={styles.products}>
             <div className={styles.container}>
-                <p className={styles.products__text}>Показано {items.indexOf(currentItems[currentItems.length-1])+1} из {items.length} товаров</p>
+                <p className={styles.products__text}>Shown {items.indexOf(currentItems[currentItems.length-1])+1} of {items.length} goods</p>
                 <div className={styles.products__content}>
                     {currentItems.map((product) => {
                         return <ProductsItem data={product} key={product.id} />
                     })}
                 </div>
-                <p className={styles.products__text}>Показано {items.indexOf(currentItems[currentItems.length-1])+1} из {items.length} товаров</p>
+                <p className={styles.products__text}>Shown {items.indexOf(currentItems[currentItems.length-1])+1} of {items.length} goods</p>
                 <Pagination 
                 itemsPerPage={itemsPerPage} 
                 items={items.length} 

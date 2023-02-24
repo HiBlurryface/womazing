@@ -20,11 +20,7 @@ function Header() {
     const [modal, setModal] = useState(false);
     
     window.addEventListener('scroll', function () {
-        if (window.scrollY > 1) {
-            setIsFixed(true)
-        } else {
-            setIsFixed(false)
-        }
+        window.scrollY > 1 ? setIsFixed(true) : setIsFixed(false);
     });
     isOpen ? document.querySelector('body').classList.add("lock") : document.querySelector('body').classList.remove("lock");
     modal ? document.querySelector('body').style.overflow = 'hidden' : document.querySelector('body').style.overflow = 'unset'  

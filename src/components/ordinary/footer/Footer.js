@@ -40,8 +40,8 @@ function Footer() {
                 <div className={styles.row}>
                     <div className={styles.rights}>
                         <p className={styles.rights_text}>Alexandr Ksenz © hiblurryface</p>
-                        <p className={styles.rights_text}>Политика конфиденциальности</p>
-                        <p className={styles.rights_text}>Публичная оферта</p>
+                        <p className={styles.rights_text}>Privacy Policy</p>
+                        <p className={styles.rights_text}>Public offer</p>
                     </div>
                     <div className={styles.group}>
                         <div className={styles.social}>

@@ -1,18 +1,18 @@
 const navigation = [
     {
-        title: 'Главная',
+        title: 'Home',
         href: '/'
     },
     {
-        title: 'Магазин',
+        title: 'Catalog',
         href: '/catalog'
     },
     {
-        title: 'О бренде',
+        title: 'About us',
         href: '/about-us'
     },
     {
-        title: 'Контакты',
+        title: 'Contacts',
         href: '/contacts'
     },
 ]

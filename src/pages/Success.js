@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { useSelector } from 'react-redux';
+import { Navigate,useNavigate } from "react-router";
 
 import Preview from "../components/ordinary/preview/Preview";
 import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTransparent";
@@ -7,22 +8,26 @@ import ButtonTransparent from "../components/UI/buttonTransparent/ButtonTranspar
 import success from './../assets/images/success.svg';
 import styles from './../assets/styles/Success.module.scss'
 function Success() {
+    const checkout = useSelector(state => state.checkout);
     const navigate = useNavigate()
-    return <>
-        <Preview title="Заказ получен"/>
-        <section className={styles.content}>
-            <div className={styles.container}>
-                <div className={styles.block}>
-                    <img src={success} alt="" className={styles.block__icon} />
-                    <div className={styles.block__text}>
-                        <h2 className={styles.block__text_title}>Заказ успешно оформлен</h2>
-                        <p className={styles.block__text_info}>Мы свяжемся с вами в ближайшее время!</p>
+
+    return checkout === null
+        ? <Navigate to="/*" />
+        : <>
+            <Preview title="Order received" />
+            <section className={styles.content}>
+                <div className={styles.container}>
+                    <div className={styles.block}>
+                        <img src={success} alt="" className={styles.block__icon} />
+                        <div className={styles.block__text}>
+                            <h2 className={styles.block__text_title}>Order successfully completed</h2>
+                            <p className={styles.block__text_info}>We will contact you shortly!</p>
+                        </div>
+                        <ButtonTransparent onClick={() => navigate('/')}>To Home</ButtonTransparent>
                     </div>
-                    <ButtonTransparent onClick={()=> navigate('/')}>Перейти на главную</ButtonTransparent>
                 </div>
-            </div>
-        </section>
-    </>
+            </section>
+        </>
 }
 
 export default Success;

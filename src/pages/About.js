@@ -10,7 +10,7 @@ import styles from './../assets/styles/About.module.scss'
 function About() {
     const navigate = useNavigate()
     return <>
-        <Preview title="О Бренде"/>
+        <Preview title="About us"/>
         <section className={styles.about}>
             <div className={styles.container}>
                 <div className={styles.about__content}>
@@ -19,9 +19,9 @@ function About() {
                             <img src={about1} alt="" className={styles.about__block_pic} />
                         </div>
                         <div className={styles.about__block_text}>
-                            <h2 className={styles.about__block_title}>Идея и женщина</h2>
-                            <p className={styles.about__block_info}>Womazing была основана в 2010-ом и стала одной из самых успешных компаний нашей страны. Как и многие итальянские фирмы, Womazing остаётся семейной компанией, хотя ни один из членов семьи не является модельером.</p>
-                            <p className={styles.about__block_info}>Мы действуем по успешной формуле, прибегая к услугам известных модельеров для создания своих коллекций. Этот метод был описан критиком моды Колином Макдауэллом как форма дизайнерского со-творчества, характерная для ряда итальянских prêt-a-porter компаний. </p>
+                            <h2 className={styles.about__block_title}>Idea and woman</h2>
+                            <p className={styles.about__block_info}>Womazing was founded in 2010 and has become one of the most successful companies in our country. Like many Italian firms, Womazing remains a family company, although none of the family members are fashion designers.</p>
+                            <p className={styles.about__block_info}>We follow a successful formula, using the services of well-known fashion designers to create our collections. The method has been described by fashion critic Colin McDowell as a form of design co-creation characteristic of a number of Italian prêt-a-porter companies.</p>
                         </div>
                     </div>
                     <div className={styles.about__block}>
@@ -29,12 +29,12 @@ function About() {
                             <img src={about2} alt="" className={styles.about__block_pic} />
                         </div>
                         <div className={styles.about__block_text}>
-                            <h2 className={styles.about__block_title}>Магия в деталях</h2>
-                            <p className={styles.about__block_info}>Первый магазин Womazing был открыт в маленьком городке на севере страны в 2010-ом году. Первая коллекция состояла из двух пальто и костюма, которые были копиями парижских моделей.</p>
-                            <p className={styles.about__block_info}>Несмотря на то, что по образованию основательница была адвокатом, ее семья всегда была тесно связана с шитьём (прабабушка основательницы шила одежду для женщин, а мать основала профессиональную школу кроя и шитья). Стремление производить одежду для масс несло в себе большие перспективы, особенно в то время, когда высокая мода по-прежнему доминировала, а рынка качественного prêt-a-porter попросту не существовало.</p>
+                            <h2 className={styles.about__block_title}>The magic is in the details</h2>
+                            <p className={styles.about__block_info}>The first Womazing store was opened in a small town in the north of the country in 2010. The first collection consisted of two coats and a suit, which were copies of Parisian models.</p>
+                            <p className={styles.about__block_info}>Despite the fact that the founder was a lawyer by training, her family has always been closely associated with sewing (the founder's great-grandmother made clothes for women, and her mother founded a professional school of tailoring). The desire to produce clothes for the masses carried great promise, especially at a time when high fashion still dominated and the market for quality prêt-a-porter simply did not exist.</p>
                         </div>
                     </div>
-                    <Button onClick={()=>navigate('/catalog')} style={{ margin: '0px auto' }}>Перейти в магазин</Button>
+                    <Button onClick={()=>navigate('/catalog')} style={{ margin: '0px auto' }}>Go to store</Button>
                 </div>
             </div>
         </section>

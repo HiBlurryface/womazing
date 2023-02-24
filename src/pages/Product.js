@@ -4,12 +4,12 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addProductAction } from "../store/cartReducer";
 
+import Toast from "../components/simple/toast/Toast";
 import Preview from "../components/ordinary/preview/Preview";
 import ProductsItem from "../components/ordinary/productsItem/ProductsItem";
 import Button from "../components/UI/button/Button";
 
 import styles from './../assets/styles/Product.module.scss'
-import Toast from "../components/simple/toast/Toast";
 function Product({ goods }) {
     const dispatch = useDispatch()
     const { id } = useParams()
@@ -55,22 +55,22 @@ function Product({ goods }) {
 
         if (productSettings.size != undefined && productSettings.color != undefined) {
             dispatch(addProductAction(productSettings))
-            setToast({ ...toast, isActive: true, message: 'Товар добавлен в корзину' })
+            setToast({ ...toast, isActive: true, message: 'Product added to cart' })
             resetSettings();
         } else {
-            setToast({ ...toast, isActive: true, message: 'Невыбраны все обязательные параметры' })
+            setToast({ ...toast, isActive: true, message: 'All required parameters are not selected' })
         }
     }
 
     return product === undefined
-        ? <Preview title="Загрузка..." />
+        ? <Preview title="Loading..." />
         : <>
             <Preview title={product.title} />
             <section className={styles.item}>
                 <div className={styles.container}>
                     <div className={styles.item__content}>
                         <div className={styles.item__img}>
-                            <img src={product.photo} alt="Фотограция товара" className={styles.item__photo} />
+                            <img src={product.photo} alt="Photo picture" className={styles.item__photo} />
                         </div>
                         <div className={styles.item__info}>
                             <div className={styles.item__group}>
@@ -80,8 +80,8 @@ function Product({ goods }) {
                                 </h2>
                             </div>
                             <div className={styles.item__group}>
-                                <p className={styles.item__option}>Выберите размер
-                                    {selectedSize === undefined && <span className={styles.item__option_error}>Обязательный параметр</span>}
+                                <p className={styles.item__option}>Select size
+                                    {selectedSize === undefined && <span className={styles.item__option_error}>Required parameter</span>}
                                 </p>
                                 <div className={styles.item__size}>
                                     {product.sizes.map((size, index) => {
@@ -90,8 +90,8 @@ function Product({ goods }) {
                                 </div>
                             </div>
                             <div className={styles.item__group}>
-                                <p className={styles.item__option}>Выберите цвет
-                                    {selectedColor === undefined && <span className={styles.item__option_error}>Обязательный параметр</span>}
+                                <p className={styles.item__option}>Select color
+                                    {selectedColor === undefined && <span className={styles.item__option_error}>Required parameter</span>}
                                 </p>
                                 <div className={styles.item__color}>
                                     {product.colors.map((color, index) => {
@@ -101,7 +101,7 @@ function Product({ goods }) {
                             </div>
                             <div className={styles.item__buy}>
                                 <input type="number" value={count} onChange={e => setCount(Math.max(min, Math.min(max, Number(e.target.value))))} className={styles.item__count} />
-                                <Button type="button" onClick={addToCart}>Добавить в корзину</Button>
+                                <Button type="button" onClick={addToCart}>Add to cart</Button>
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@ function Product({ goods }) {
             </section>
             <section className={styles.catalog}>
                 <div className={styles.container}>
-                    <h2 className={styles.catalog__title}>Связанные товары</h2>
+                    <h2 className={styles.catalog__title}>Related Products</h2>
                     <div className={styles.catalog__content}>
                         {similarProducts.map((product, index) => {
                             if (index < 3) { return <ProductsItem data={product} key={product.id} /> }

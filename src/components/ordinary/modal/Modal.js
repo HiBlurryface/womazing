@@ -6,7 +6,7 @@ import * as yup from 'yup'
 import classNames from "classnames";
 import Button from "../../UI/button/Button";
 import ButtonTransparent from "../../UI/buttonTransparent/ButtonTransparent";
-import Input from "../../UI/input/Input";
+import ValidationInput from "../../UI/validationInput/ValidationInput";
 
 import styles from './Modal.module.scss'
 
@@ -39,24 +39,24 @@ function Modal({ modal, setModal }) {
             {!confirm
                 ? <div className={styles.form}>
                     <button className={styles.close} onClick={() => setModal(false)}></button>
-                    <h3 className={styles.title}>Заказать обратный звонок</h3>
+                    <h3 className={styles.title}>Request a call back</h3>
                     <form action="" onSubmit={handleSubmit(onSubmit)}>
 
-                        <Input
+                        <ValidationInput
                             id="name"
                             type="text"
                             placeholder="Имя"
                             register={{ ...register('name') }}
                             errorMessage={errors.name?.message}
                         />
-                        <Input
+                        <ValidationInput
                             id="email"
                             type="text"
                             placeholder="E-mail"
                             register={{ ...register('email') }}
                             errorMessage={errors.email?.message}
                         />
-                        <Input
+                        <ValidationInput
                             id="phone"
                             type="number"
                             placeholder="Телефон"
@@ -64,12 +64,12 @@ function Modal({ modal, setModal }) {
                             errorMessage={errors.phone?.message}
                         />
 
-                        <Button type="submit" style={{ width: '100%' }}>Заказать звонок</Button>
+                        <Button type="submit" style={{ width: '100%' }}>Request a call</Button>
                     </form>
                 </div>
                 : <div className={styles.confirm}>
-                    <h3 className={styles.title}>Отлично! Мы скоро вам перезвоним.</h3>
-                    <ButtonTransparent style={{ margin: '0px auto' }} onClick={() => setModal(false)}>Закрыть</ButtonTransparent>
+                    <h3 className={styles.title}>Great! We will call you back soon.</h3>
+                    <ButtonTransparent style={{ margin: '0px auto' }} onClick={() => setModal(false)}>Close</ButtonTransparent>
                 </div>}
         </div>
     </div>

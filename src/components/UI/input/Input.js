@@ -1,11 +1,10 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import styles from './Input.module.scss'
 
-const Input = ({id, type, placeholder, register, errorMessage}) => {
-    return <div className={styles.wrapper}>
-        <input className={styles.input} id={id} type={type} placeholder=" " {...register}/>
-        <label htmlFor={id} className={styles.label}>{placeholder}</label>
-        <span className={styles.error}>{errorMessage}</span>
+const Input = (props) => {
+  return <div className={styles.wrapper}>
+    <input className={styles.input} {...props} placeholder=" " />
+    <label htmlFor={props.id} className={styles.label}>{props.placeholder}</label>
   </div>
 }
 

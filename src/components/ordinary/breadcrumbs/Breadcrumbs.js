@@ -17,7 +17,7 @@ const Breadcrumbs = ({title}) => {
         })
 
     return <div className={styles.wrapper}>
-        <NavLink to="/" className={styles.item}>Главная</NavLink>
+        <NavLink to="/" className={styles.item}>Home</NavLink>
         {crumbs}
     </div>
 }

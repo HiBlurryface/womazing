@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from 'yup'
 
 import Preview from "../components/ordinary/preview/Preview";
-import Input from './../components/UI/input/Input'
+import ValidationInput from './../components/UI/validationInput/ValidationInput'
 import Button from './../components/UI/button/Button'
 import Textarea from './../components/UI/textarea/Textarea'
 
@@ -14,9 +14,9 @@ import classNames from "classnames";
 function Contacts() {
     const [showMessage, setShowMessage] = useState(false)
     const schema = yup.object({
-        name: yup.string().required('Обязательное поле'),
-        email: yup.string().required("Обязательное поле").email('Неправильная почта'),
-        phone: yup.string().required("Обязательное поле").matches(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, "Неправильный номер телефона"),
+        name: yup.string().required('Required field'),
+        email: yup.string().required("Required field").email('Wrong email address'),
+        phone: yup.string().required("Required field").matches(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, "Wrong phone number"),
         message: yup.string(),
     })
 
@@ -35,7 +35,7 @@ function Contacts() {
     };
 
     return <>
-        <Preview title="Контакты" />
+        <Preview title="Contacts" />
         <section className={styles.map}>
             <div className={styles.container}>
                 <a href="https://www.google.com/maps/@35.7040744,139.5577317,3a,89.9y,288.4h,72.03t/data=!3m6!1e1!3m4!1sgT28ssf0BB2LxZ63JNcL1w!2e0!7i13312!8i6656" className={styles.map__link}>
@@ -47,7 +47,7 @@ function Contacts() {
             <div className={styles.container}>
                 <div className={styles.contacts__content}>
                     <div className={styles.contacts__block}>
-                        <p className={styles.contacts__block_title}>Телефон</p>
+                        <p className={styles.contacts__block_title}>Telephone</p>
                         <a href="tel:12345678" className={styles.contacts__block_link}>+7 (495) 823-54-12</a>
                     </div>
                     <div className={styles.contacts__block}>
@@ -55,7 +55,7 @@ function Contacts() {
                         <a href="mailto:info@sitename.com" className={styles.contacts__block_link}>info@sitename.com</a>
                     </div>
                     <div className={styles.contacts__block}>
-                        <p className={styles.contacts__block_title}>Адрес</p>
+                        <p className={styles.contacts__block_title}>Address</p>
                         <a href="https://www.google.com/maps/@35.7040744,139.5577317,3a,89.9y,288.4h,72.03t/data=!3m6!1e1!3m4!1sgT28ssf0BB2LxZ63JNcL1w!2e0!7i13312!8i6656" className={styles.contacts__block_link}>г. Москва, 3-я улица Строителей, 25</a>
                     </div>
                 </div>
@@ -65,33 +65,33 @@ function Contacts() {
             <div className={styles.container}>
                 <div className={styles.form__content}>
                     <form action="" onSubmit={handleSubmit(onSubmit)}>
-                        <h3 className={styles.form__title}>Напишите нам</h3>
-                        <Input
+                        <h3 className={styles.form__title}>Write to us</h3>
+                        <ValidationInput
                             id="name"
                             type="text"
-                            placeholder="Имя"
+                            placeholder="Name"
                             register={{ ...register('name') }}
                             errorMessage={errors.name?.message}
                         />
-                        <Input
+                        <ValidationInput
                             id="email"
                             type="text"
                             placeholder="E-mail"
                             register={{ ...register('email') }}
                             errorMessage={errors.email?.message}
                         />
-                        <Input
+                        <ValidationInput
                             id="phone"
                             type="number"
-                            placeholder="Телефон"
+                            placeholder="Tel"
                             register={{ ...register('phone') }}
                             errorMessage={errors.phone?.message}
                         />
-                        <Textarea id="message" placeholder="Сообщение" register={{ ...register('message') }}></Textarea>
-                        <Button type="submit" style={{marginTop: "30px"}}>Отправить</Button>
+                        <Textarea id="message" placeholder="Message" register={{ ...register('message') }}></Textarea>
+                        <Button type="submit" style={{ marginTop: "30px" }}>Send</Button>
                     </form>
                     <span className={classNames(styles.form__message, { [`${styles.form__message_active}`]: showMessage })}>
-                        Сообщение успешно отправлено
+                        Message sent successfully
                     </span>
                 </div>
             </div>

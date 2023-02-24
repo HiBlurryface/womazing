@@ -3,7 +3,7 @@ import Preview from "../components/ordinary/preview/Preview";
 
 function PageNotFound() {
     return <>
-        <Preview title="Страница не найдена"/>
+        <Preview title="Page not found | 404 "/>
     </>
 }
 

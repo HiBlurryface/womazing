@@ -43,21 +43,21 @@ function Home({goods}) {
                             }}
                         >
                             <SwiperSlide>
-                                <h1 className={styles.intro__text_title}>Новые поступления в этом сезоне</h1>
-                                <p className={styles.intro__text_subtitle}>Утонченные сочетания и бархатные оттенки - вот то, что вы искали в этом сезоне. Время исследовать.</p>
+                                <h1 className={styles.intro__text_title}>New arrivals this season</h1>
+                                <p className={styles.intro__text_subtitle}>Refined combinations and velvet shades - that's what you've been looking for this season. Time to explore.</p>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <h2 className={styles.intro__text_title}>Что-то новенькое. Мы заждались тебя.</h2>
-                                <p className={styles.intro__text_subtitle}>Надоело искать себя в сером городе? Настало время новых идей, свежих красок и вдохновения с Womazing!</p>
+                                <h2 className={styles.intro__text_title}>Something new. We've been waiting for you.</h2>
+                                <p className={styles.intro__text_subtitle}>Tired of looking for yourself in a gray city? It's time for new ideas, fresh colors and inspiration with Womazing!</p>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <h2 className={styles.intro__text_title}>Включай новый сезон с WOMAZING</h2>
-                                <p className={styles.intro__text_subtitle}>Мы обновили ассортимент - легендарные коллекции и новинки от отечественных дизайнеров</p>
+                                <h2 className={styles.intro__text_title}>Turn on the new season with WOMAZING</h2>
+                                <p className={styles.intro__text_subtitle}>We have updated the assortment - legendary collections and novelties from domestic designers</p>
                             </SwiperSlide>
                             <div className='intro__slider_pagination'></div>
                         </Swiper>
                         <div className={styles.intro__text_group}>
-                            <Button onClick={() => navigate('/catalog')}>Открыть магазин</Button>
+                            <Button onClick={() => navigate('/catalog')}>Open shop</Button>
                         </div>
                     </div>
                     <div className={styles.intro__img}>
@@ -76,40 +76,40 @@ function Home({goods}) {
         </div>
         <section className={styles.products}>
             <div className={styles.container}>
-                <h2 className={styles.products__title}>Новые товары</h2>
+                <h2 className={styles.products__title}>New goods</h2>
                 <div className={styles.products__content}>
                     {goods.map((product, index) => {
                         if(index > goods.length-4) {return <ProductsItem data={product} key={product.id} />}
                     })}
                 </div>
-                <ButtonTransparent onClick={() => navigate('/catalog')}>Открыть магазин</ButtonTransparent>
+                <ButtonTransparent onClick={() => navigate('/catalog')}>Open shop</ButtonTransparent>
             </div>
         </section>
         <section className={styles.quality}>
             <div className={styles.container}>
-                <h2 className={styles.quality__title}>Что для нас важно</h2>
+                <h2 className={styles.quality__title}>What is important to us</h2>
                 <div className={styles.quality__content}>
                     <div className={styles.quality__block}>
                         <img src={quality1} alt="" className={styles.quality__block_img} />
-                        <h3 className={styles.quality__block_title}>Качество</h3>
-                        <p className={styles.quality__block_info}>Наши профессионалы работают на лучшем оборудовании для пошива одежды беспрецедентного качества</p>
+                        <h3 className={styles.quality__block_title}>Quality</h3>
+                        <p className={styles.quality__block_info}>Our professionals work on the best equipment for tailoring clothes of unparalleled quality.</p>
                     </div>
                     <div className={styles.quality__block}>
                         <img src={quality2} alt="" className={styles.quality__block_img} />
-                        <h3 className={styles.quality__block_title}>Скорость</h3>
-                        <p className={styles.quality__block_info}>Благодаря отлаженной системе в Womazing мы можем отшивать до 20-ти единиц продукции в наших собственных цехах</p>
+                        <h3 className={styles.quality__block_title}>Velocity</h3>
+                        <p className={styles.quality__block_info}>Thanks to the well-established system at Womazing, we can sew up to 20 pieces of products in our own workshops</p>
                     </div>
                     <div className={styles.quality__block}>
                         <img src={quality3} alt="" className={styles.quality__block_img} />
-                        <h3 className={styles.quality__block_title}>Ответственность</h3>
-                        <p className={styles.quality__block_info}>Мы заботимся о людях и планете. Безотходное производство и комфортные условия труда - все это Womazing</p>
+                        <h3 className={styles.quality__block_title}>Responsibility</h3>
+                        <p className={styles.quality__block_info}>We care about people and the planet. Waste-free production and comfortable working conditions - all this is Womazing</p>
                     </div>
                 </div>
             </div>
         </section>
         <section className={styles.about}>
             <div className={styles.container}>
-                <h2 className={styles.about__title}>Команда мечты Womazing</h2>
+                <h2 className={styles.about__title}>Dream Team Womazing</h2>
                 <div className={styles.about__content}>
                     <div className={styles.about__slider}>
                         <div className={styles.about__slider_container}>
@@ -138,10 +138,10 @@ function Home({goods}) {
                         </div>
                     </div>
                     <div className={styles.about__info}>
-                        <h3 className={styles.about__info_title}>Для каждой</h3>
-                        <p className={styles.about__info_text}>Каждая девушка уникальна. Однако, мы схожи в миллионе мелочей.</p>
-                        <p className={styles.about__info_text}>Womazing ищет эти мелочи и создает прекрасные вещи, которые выгодно подчеркивают достоинства каждой девушки.</p>
-                        <NavLink to="/about-us" className={styles.about__info_link}>Подробнее о бренде</NavLink>
+                        <h3 className={styles.about__info_title}>For everyone</h3>
+                        <p className={styles.about__info_text}>Every girl is unique. However, we are similar in a million little things.</p>
+                        <p className={styles.about__info_text}>Womazing looks for these little things and creates beautiful things that emphasize the advantages of every girl.</p>
+                        <NavLink to="/about-us" className={styles.about__info_link}>More about the brand</NavLink>
                     </div>
                 </div>
             </div>
