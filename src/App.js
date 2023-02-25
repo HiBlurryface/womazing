@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import ScrollToTop from './utils/scrollToTop';
 
-import goods from './pages/goods.json'
+// import goods from './pages/goods.json'
 
 import Layout from './pages/Layout';
 import Home from './pages/Home'
@@ -17,6 +17,7 @@ import PageNotFound from './pages/PageNotFound';
 
 import './assets/styles/main.scss'
 function App() {
+  window.scrollTo(0, 0)
   const promocodes = [
     {
       title: 'BMW',
@@ -36,14 +37,14 @@ function App() {
     }
   ]
 
-  // const [goods, setGoods] = useState([])
-  // useEffect(()=> {
-  //   fetch('https://63e90f865f3e35d898fa3a13.mockapi.io/items?category')
-  //   .then((res) => res.json())
-  //   .then((arr) => {
-  //     setGoods(arr)
-  //   })
-  // }, [])  
+  const [goods, setGoods] = useState([])
+  useEffect(() => {
+    fetch('https://63e90f865f3e35d898fa3a13.mockapi.io/items?category')
+      .then((res) => res.json())
+      .then((arr) => {
+        setGoods(arr)
+      })
+  }, [])
   return <div className='body__wrapper'>
     <Router>
       <ScrollToTop />
@@ -54,7 +55,7 @@ function App() {
           <Route path="product/:id" element={<Product goods={goods} />} />
           <Route path="about-us" element={<About />} />
           <Route path="contacts" element={<Contacts />} />
-          <Route path="cart" element={<Cart promocodes={promocodes}/>} />
+          <Route path="cart" element={<Cart promocodes={promocodes} />} />
           <Route path="checkout" element={<Checkout />} />
           <Route path="checkout/success" element={<Success />} />
           <Route path="*" element={<PageNotFound />} />

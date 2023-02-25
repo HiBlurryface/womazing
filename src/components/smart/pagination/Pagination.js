@@ -4,7 +4,7 @@ import classNames from "classnames";
 import buttonNext from './../../../assets/images/slider-arrow-next.svg'
 import buttonPrev from './../../../assets/images/slider-arrow-prev.svg'
 import styles from './Pagination.module.scss'
-function Pagination({ itemsPerPage, items, currentPage, setCurrentPage }) {
+function Pagination({ itemsPerPage, items, currentPage, setCurrentPage, scrollTop }) {
     const [currentButton, setCurrentButton] = useState(1);
     const [currentPageNumber, setCurrentPageNumber] = useState([])
     const pageNumber = [];
@@ -38,7 +38,7 @@ function Pagination({ itemsPerPage, items, currentPage, setCurrentPage }) {
         <div className={styles.wrapper}>
             <button
                 type="button"
-                onClick={() => setCurrentButton(currentButton - 1)}
+                onClick={() => (setCurrentButton(currentButton - 1),scrollTop())}
                 className={classNames(styles.prev, { [`${styles.prev__disabled}`]: currentPage === 1 })}
             >
                 <img src={buttonPrev} alt="" />
@@ -46,14 +46,14 @@ function Pagination({ itemsPerPage, items, currentPage, setCurrentPage }) {
             {currentPageNumber.map(number => {
                 return <button type="button"
                     className={classNames(styles.button, { [`${styles.button__active}`]: currentPage === number })}
-                    onClick={() => setCurrentButton(number)}
+                    onClick={() => (setCurrentButton(number), scrollTop())}
                     key={number}>
                     {number}
                 </button>
             })}
             <button
                 type="button"
-                onClick={() => setCurrentButton(currentButton + 1)}
+                onClick={() => (setCurrentButton(currentButton + 1),scrollTop())}
                 className={classNames(styles.next, { [`${styles.next__disabled}`]: currentPage === pageNumber.length })}
             >
                 <img src={buttonNext} alt="" />

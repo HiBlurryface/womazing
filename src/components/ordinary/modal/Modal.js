@@ -14,9 +14,9 @@ function Modal({ modal, setModal }) {
     const [confirm, setConfirm] = useState(false)
 
     const schema = yup.object({
-        name: yup.string().required('Обязательное поле'),
-        email: yup.string().required("Обязательное поле").email('Неправильная почта'),
-        phone: yup.string().required("Обязательное поле").matches(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, "Неправильный номер телефона"),
+        name: yup.string().required('Required field'),
+        email: yup.string().required("Required field").email('Wrong email address'),
+        phone: yup.string().required("Required field").matches(/\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, "Wrong tel number"),
     })
 
     const { handleSubmit, register, formState: { errors }, reset } = useForm({

@@ -5,20 +5,14 @@ import { NavLink } from "react-router-dom";
 
 import styles from './Breadcrumbs.module.scss'
 
-const Breadcrumbs = ({title}) => {
+const Breadcrumbs = ({ title }) => {
     const location = useLocation();
-    const crumbs = location.pathname.split('/')
-        .filter(crumb => crumb !== '')
-        .map(crumb => {
-            return <div key={crumb} style={{display:'flex', alignItems:'center'}}>
-                <span className={styles.separation}></span>
-                <NavLink to={`/${crumb}`} className={classNames(styles.item, styles.item__active)}>{title}</NavLink>
-            </div>
-        })
+    const currentPage = location.pathname.split('/')[1];
 
     return <div className={styles.wrapper}>
         <NavLink to="/" className={styles.item}>Home</NavLink>
-        {crumbs}
+        <span className={styles.separation}></span>
+        <NavLink to={location.pathname} className={classNames(styles.item, styles.item__active)}>{currentPage}</NavLink>
     </div>
 }
 

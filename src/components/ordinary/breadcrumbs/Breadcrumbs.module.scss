@@ -11,7 +11,9 @@
 }
 .item {
     @extend %default-text;
-
+    &:first-letter {
+        text-transform: uppercase;
+    }
     &__active {
         pointer-events: none;
         opacity: 0.6;
