@@ -61,7 +61,7 @@ function Cart({ promocodes }) {
 
     function confirm() {
         if (cart.length === 0) {
-            setToast({ ...toast, isActive: true, message: 'Корзина пустая' })
+            setToast({ ...toast, isActive: true, message: 'Cart is empty' })
         } else {
             dispatch(getData({
                 products: cart,

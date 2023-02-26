@@ -40,7 +40,7 @@ function Product({ goods }) {
             })
         }
     }, [product, selectedSize, selectedColor, count]);
-    useEffect(()=> {
+    useEffect(() => {
         resetSettings();
         setSimilarProducts(goods.filter(item => (item.category === product.category && item.id != id)).sort(() => Math.random() - 0.5));
     }, [product])
@@ -70,13 +70,17 @@ function Product({ goods }) {
                 <div className={styles.container}>
                     <div className={styles.item__content}>
                         <div className={styles.item__img}>
+                            {product.fullPrice && <div className={styles.item__sale}>
+                                <p className={styles.item__sale__text}>-{100 - (product.price / product.fullPrice * 100).toFixed()}%</p>
+                            </div>}
                             <img src={product.photo} alt="Photo picture" className={styles.item__photo} />
                         </div>
                         <div className={styles.item__info}>
+                        {product.isBestseller === true && <p className={styles.item__bestseller}>BESTSELLER</p>}
                             <div className={styles.item__group}>
                                 <h2 className={styles.item__price}>
                                     ${product.price}
-                                    {/* <span className={styles.item__price_second}>$450</span> */}
+                                    {product.fullPrice && <span className={styles.item__price_second}>${product.fullPrice}</span>}
                                 </h2>
                             </div>
                             <div className={styles.item__group}>

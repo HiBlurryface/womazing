@@ -1,280 +1,150 @@
 [
-    {
-      "id": 1,
-      "category": 1,
-      "title": "T-Shirt USA",
-      "price": 129,
-      "photo": "https://drive.google.com/uc?export=view&id=1RR08Kd-58JQEEiNFLlJFbhMMgd9kiovj",
-      "sizes": [
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "colors": [
-        "#8eaf92",
-        "#984100",
-        "#FD9696",
-        "#FDC796",
-        "#285451"
-      ]
-    },
-    {
-      "id": 2,
-      "category": 1,
-      "title": "T-Shirt Anime",
-      "price": 99,
-      "photo": "https://drive.google.com/uc?export=view&id=13MmFq8i_9UpUWfoqjDxIEDD8CzMIOACn",
-      "sizes": [
-        "S"
-      ],
-      "colors": [
-        "#FD9696",
-        "#FDC796"
-      ]
-    },
-    {
-      "id": 3,
-      "category": 1,
-      "title": "T-Shirt Piwozawr",
-      "price": 312,
-      "photo": "https://drive.google.com/uc?export=view&id=1aRamYz-fCiTCffT4Ym7qHVss2L37rwmv",
-      "sizes": [
-        "XXL"
-      ],
-      "colors": [
-        "#f497cc",
-        "#ef9393",
-        "#c11a4b",
-        "#99979d",
-        "#fc0540"
-      ]
-    },
-    {
-      "id": 4,
-      "category": 1,
-      "title": "T-Shirt 404",
-      "price": 69,
-      "photo": "https://drive.google.com/uc?export=view&id=1egLIlQe86De-0GBzqjBtGPNkh7Hf-Lpj",
-      "sizes": [
-        "S",
-        "L",
-        "XL"
-      ],
-      "colors": [
-        "#fea231",
-        "#b38c43",
-        "#FD9696"
-      ]
-    },
-    {
-      "id": 5,
-      "category": 1,
-      "title": "T-Shirt aPivasBude",
-      "price": 10,
-      "photo": "https://drive.google.com/uc?export=view&id=1-FBUZaXugkqsHSQGTCYULSJs_V9bsiPU",
-      "sizes": [
-        "S",
-        "M",
-        "XL"
-      ],
-      "colors": [
-        "#ae4777",
-        "#c2681a",
-        "#7d1f40",
-        "#7d1f40"
-      ]
-    },
-    {
-      "id": 6,
-      "category": 1,
-      "title": "T-Shirt Zoomer",
-      "price": 1,
-      "photo": "https://drive.google.com/uc?export=view&id=1Tlt3AchULeOZbIb5U9g62PP5eODfvcL7",
-      "sizes": [
-        "S"
-      ],
-      "colors": [
-        "#d7d7d7",
-        "#7d1f40"
-      ]
-    },
-    {
-      "id": 7,
-      "category": 1,
-      "title": "T-Shirt Kot",
-      "price": 99,
-      "photo": "https://drive.google.com/uc?export=view&id=1aWqv5p-w2m_nrTtAmTya0STKLLVkAu1q",
-      "sizes": [
-        "XL",
-        "XXL"
-      ],
-      "colors": [
-        "#eceae2",
-        "#b216de",
-        "#b216de"
-      ]
-    },
-    {
-      "id": 8,
-      "category": 2,
-      "title": "Sweatshirt Chelty",
-      "price": 99,
-      "photo": "https://drive.google.com/uc?export=view&id=1ZSNceISMYHuQ4sbPmzGZpxfZkmGDhz-h",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "colors": [
-        "#b216de",
-        "#2f352b",
-        "#7b7fb1",
-        "#adb4a5"
-      ]
-    },
-    {
-      "id": 9,
-      "category": 2,
-      "title": "Sweatshirt Kot2.0",
-      "price": 214,
-      "photo": "https://drive.google.com/uc?export=view&id=1wK5fcYk9BZ2QyZ4-VCTZ7wIW_BgL06Ag",
-      "sizes": [
-        "M",
-        "L"
-      ],
-      "colors": [
-        "#3ddd2c",
-        "#7dcd21",
-        "#b72457"
-      ]
-    },
-    {
-      "id": 10,
-      "category": 2,
-      "title": "Sweatshirt ICan't",
-      "price": 214,
-      "photo": "https://drive.google.com/uc?export=view&id=1TFFcBf2YAb8_faG30VjCUpATQvdYq7vo",
-      "sizes": [
-        "S",
-        "XL",
-        "XXL"
-      ],
-      "colors": [
-        "#927876",
-        "#D5D5D5",
-        "#FD9696",
-        "#FDC796"
-      ]
-    },
-    {
-      "id": 11,
-      "category": 3,
-      "title": "Coat Brown",
-      "price": 120,
-      "photo": "https://drive.google.com/uc?export=view&id=1K7vTVU9zEq6Q5u2fXFYFRgfmzyWkqtA7",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "colors": [
-        "#897e43",
-        "#17393d"
-      ]
-    },
-    {
-      "id": 12,
-      "category": 3,
-      "title": "Coat Brigada",
-      "price": 999,
-      "photo": "https://drive.google.com/uc?export=view&id=1m1zTRbl32xT65VQwOL8FhDH6ajfy8uy1",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "colors": [
-        "#000"
-      ]
-    },
-    {
-      "id": 13,
-      "category": 3,
-      "title": "Coat Brown 2.0",
-      "price": 300,
-      "photo": "https://drive.google.com/uc?export=view&id=1tUxpyzXdizEuugj2KNjZTVxVTrNRBG6S",
-      "sizes": [
-        "XXL"
-      ],
-      "colors": [
-        "#927876"
-      ]
-    },
-    {
-      "id": 14,
-      "category": 4,
-      "title": "Sweater White",
-      "price": 35,
-      "photo": "https://drive.google.com/uc?export=view&id=1zMul-vSdF5E7m7FMp0Pj-unLnhmiEn-x",
-      "sizes": [
-        "S",
-        "M"
-      ],
-      "colors": [
-        "#100c26",
-        "#0b5c50",
-        "#68aa88"
-      ]
-    },
-    {
-      "id": 15,
-      "category": 4,
-      "title": "Sweater Brat",
-      "price": 999,
-      "photo": "https://drive.google.com/uc?export=view&id=1vehDih8k65dXzmo5WtC4dhLrvg98ffWC",
-      "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL",
-        "XXL"
-      ],
-      "colors": [
-        "#af6133"
-      ]
-    },
-    {
-      "id": 16,
-      "category": 4,
-      "title": "Sweater Turquoise",
-      "price": 99,
-      "photo": "https://drive.google.com/uc?export=view&id=1FDBx3tQ43PIFzaekVCjbdlP2EU52GvdY",
-      "sizes": [
-        "S"
-      ],
-      "colors": [
-        "#927876",
-        "#D5D5D5"
-      ]
-    },
-    {
-      "id": 17,
-      "category": 4,
-      "title": "Sweater Short",
-      "price": 10,
-      "photo": "https://drive.google.com/uc?export=view&id=1Memwwdzi57zy0Zip9rOlYx-_BELFBfGC",
-      "sizes": [
-        "S"
-      ],
-      "colors": [
-        "#FD9696",
-        "#FDC796"
-      ]
-    }
-  ]
+  {
+    "id": 1,
+    "category": 1,
+    "title": "T-Shirt USA",
+    "fullPrice": 329,
+    "price": 129,
+    "photo": "https://drive.google.com/uc?export=view&id=1RR08Kd-58JQEEiNFLlJFbhMMgd9kiovj",
+    "sizes": ["L", "XL", "XXL"],
+    "colors": ["#8eaf92", "#984100", "#FD9696", "#FDC796", "#285451"]
+  },
+  {
+    "id": 2,
+    "category": 1,
+    "title": "T-Shirt Anime",
+    "price": 78,
+    "photo": "https://drive.google.com/uc?export=view&id=13MmFq8i_9UpUWfoqjDxIEDD8CzMIOACn",
+    "sizes": ["S"],
+    "colors": ["#FD9696", "#FDC796"]
+  },
+  {
+    "id": 3,
+    "category": 1,
+    "title": "T-Shirt Piwozawr",
+    "fullPrice": 429,
+    "price": 312,
+    "photo": "https://drive.google.com/uc?export=view&id=1aRamYz-fCiTCffT4Ym7qHVss2L37rwmv",
+    "sizes": ["XXL"],
+    "colors": ["#f497cc", "#ef9393", "#c11a4b", "#99979d", "#fc0540"]
+  },
+  {
+    "id": 4,
+    "category": 1,
+    "title": "T-Shirt 404",
+    "price": 69,
+    "photo": "https://drive.google.com/uc?export=view&id=1egLIlQe86De-0GBzqjBtGPNkh7Hf-Lpj",
+    "sizes": ["S", "L", "XL"],
+    "colors": ["#fea231", "#b38c43", "#FD9696"]
+  },
+  {
+    "id": 5,
+    "category": 1,
+    "title": "T-Shirt aPivasBude",
+    "isBestseller": true,
+    "fullPrice": 999,
+    "price": 10,
+    "photo": "https://drive.google.com/uc?export=view&id=1-FBUZaXugkqsHSQGTCYULSJs_V9bsiPU",
+    "sizes": ["S", "M", "XL"],
+    "colors": ["#ae4777", "#c2681a", "#7d1f40", "#7d1f40"]
+  },
+  {
+    "id": 7,
+    "category": 1,
+    "title": "T-Shirt Kot",
+    "price": 99,
+    "photo": "https://drive.google.com/uc?export=view&id=1aWqv5p-w2m_nrTtAmTya0STKLLVkAu1q",
+    "sizes": ["XL", "XXL"],
+    "colors": ["#eceae2", "#b216de", "#b216de"]
+  },
+  {
+    "id": 8,
+    "category": 2,
+    "title": "Sweatshirt Chelty",
+    "price": 99,
+    "photo": "https://drive.google.com/uc?export=view&id=1ZSNceISMYHuQ4sbPmzGZpxfZkmGDhz-h",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["#b216de", "#2f352b", "#7b7fb1", "#adb4a5"]
+  },
+  {
+    "id": 9,
+    "category": 2,
+    "title": "Sweatshirt Kot2.0",
+    "price": 214,
+    "photo": "https://drive.google.com/uc?export=view&id=1wK5fcYk9BZ2QyZ4-VCTZ7wIW_BgL06Ag",
+    "sizes": ["M", "L"],
+    "colors": ["#3ddd2c", "#7dcd21", "#b72457"]
+  },
+  {
+    "id": 10,
+    "category": 2,
+    "title": "Sweatshirt ICan't",
+    "price": 214,
+    "photo": "https://drive.google.com/uc?export=view&id=1TFFcBf2YAb8_faG30VjCUpATQvdYq7vo",
+    "sizes": ["S", "XL", "XXL"],
+    "colors": ["#927876", "#D5D5D5", "#FD9696", "#FDC796"]
+  },
+  {
+    "id": 11,
+    "category": 3,
+    "title": "Coat Brown",
+    "price": 120,
+    "photo": "https://drive.google.com/uc?export=view&id=1K7vTVU9zEq6Q5u2fXFYFRgfmzyWkqtA7",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["#897e43", "#17393d"]
+  },
+  {
+    "id": 12,
+    "category": 3,
+    "title": "Coat Brigada",
+    "price": 999,
+    "photo": "https://drive.google.com/uc?export=view&id=1m1zTRbl32xT65VQwOL8FhDH6ajfy8uy1",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["#000"]
+  },
+  {
+    "id": 13,
+    "category": 3,
+    "title": "Coat Brown 2.0",
+    "price": 300,
+    "photo": "https://drive.google.com/uc?export=view&id=1tUxpyzXdizEuugj2KNjZTVxVTrNRBG6S",
+    "sizes": ["XXL"],
+    "colors": ["#927876"]
+  },
+  {
+    "id": 14,
+    "category": 4,
+    "title": "Sweater White",
+    "price": 35,
+    "photo": "https://drive.google.com/uc?export=view&id=1zMul-vSdF5E7m7FMp0Pj-unLnhmiEn-x",
+    "sizes": ["S", "M"],
+    "colors": ["#100c26", "#0b5c50", "#68aa88"]
+  },
+  {
+    "id": 15,
+    "category": 4,
+    "title": "Sweater Brat",
+    "price": 999,
+    "photo": "https://drive.google.com/uc?export=view&id=1vehDih8k65dXzmo5WtC4dhLrvg98ffWC",
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": ["#af6133"]
+  },
+  {
+    "id": 16,
+    "category": 4,
+    "title": "Sweater Turquoise",
+    "price": 99,
+    "photo": "https://drive.google.com/uc?export=view&id=1FDBx3tQ43PIFzaekVCjbdlP2EU52GvdY",
+    "sizes": ["S"],
+    "colors": ["#927876", "#D5D5D5"]
+  },
+  {
+    "id": 17,
+    "category": 4,
+    "title": "Sweater Short",
+    "price": 10,
+    "photo": "https://drive.google.com/uc?export=view&id=1Memwwdzi57zy0Zip9rOlYx-_BELFBfGC",
+    "sizes": ["S"],
+    "colors": ["#FD9696", "#FDC796"]
+  }
+]

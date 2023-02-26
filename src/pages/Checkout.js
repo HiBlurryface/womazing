@@ -58,7 +58,7 @@ function Checkout() {
         dispatch(clearCart([]))
     };
 
-    return checkout === null
+    return cart.length === 0
         ? <Navigate to="/womazing/*" />
         : <>
             <Preview title="Checkout" />

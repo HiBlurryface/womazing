@@ -3,7 +3,8 @@
 .block {
     max-width: 32%;
     width: 100%;
-
+    position: relative;
+    overflow: hidden;
     @media (max-width: 768px) {
         max-width: 320px;
     }
@@ -74,4 +75,36 @@
     line-height: 140%;
     letter-spacing: 0.02em;
     color: #998E78;
+    &__full {
+        text-decoration: line-through;
+        margin-right: 10px;
+        color: #9c9c9c;
+    }
+}
+.sale {
+    transform: rotate(-20deg);
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    background: #6E9C9F;
+    z-index: 10;
+    padding: 10px 40px;
+    width: 100%;
+    &__text {
+        color: #fff;
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 600;
+    }
+}
+.bestseller {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #6E9C9F;
+    z-index: 10;
+    border-radius: 30px;
+    padding:12px 24px;
+    color: #fff;
+    font-weight: 800;
 }
