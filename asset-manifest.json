@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/womazing/static/css/main.da194918.css",
-    "main.js": "/womazing/static/js/main.420f1606.js",
+    "main.css": "/womazing/static/css/main.94be313a.css",
+    "main.js": "/womazing/static/js/main.a8e2c7b9.js",
     "static/js/787.14ea22b4.chunk.js": "/womazing/static/js/787.14ea22b4.chunk.js",
     "static/media/about-img-3.jpg": "/womazing/static/media/about-img-3.6ead145f434f35eafe93.jpg",
     "static/media/about-img-1.jpg": "/womazing/static/media/about-img-1.4c5d5e85ddc73aaacc33.jpg",
@@ -33,12 +33,12 @@
     "static/media/slider-arrow-next.svg": "/womazing/static/media/slider-arrow-next.50d89a499e9683e35f48afcf8ee0ca91.svg",
     "static/media/slider-arrow-prev.svg": "/womazing/static/media/slider-arrow-prev.ffd9a820f561e5d358e57a708385bcaa.svg",
     "static/media/button-arrow.svg": "/womazing/static/media/button-arrow.481ba5894f2c94cdd441.svg",
-    "main.da194918.css.map": "/womazing/static/css/main.da194918.css.map",
-    "main.420f1606.js.map": "/womazing/static/js/main.420f1606.js.map",
+    "main.94be313a.css.map": "/womazing/static/css/main.94be313a.css.map",
+    "main.a8e2c7b9.js.map": "/womazing/static/js/main.a8e2c7b9.js.map",
     "787.14ea22b4.chunk.js.map": "/womazing/static/js/787.14ea22b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.da194918.css",
-    "static/js/main.420f1606.js"
+    "static/css/main.94be313a.css",
+    "static/js/main.a8e2c7b9.js"
   ]
 }
