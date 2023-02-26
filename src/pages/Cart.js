@@ -69,7 +69,7 @@ function Cart({ promocodes }) {
                 discount: discount,
                 discountedPrice: discountedPrice
             }))
-            navigate('/checkout');
+            navigate('/womazing/checkout');
         }
     }
 
@@ -112,7 +112,7 @@ function Cart({ promocodes }) {
                         style={{ maxWidth: '255px' }}
                     />
                     <ButtonTransparent onClick={() => addPromocode()}>Use promocode</ButtonTransparent>
-                    <ButtonTransparent onClick={() => navigate('/catalog')}>Update cart</ButtonTransparent>
+                    <ButtonTransparent onClick={() => navigate('/womazing/catalog')}>Update cart</ButtonTransparent>
                 </div>
                 <div className={styles.info}>
                     <p className={styles.info__price}>Subtotal: ${totalPrice}</p>

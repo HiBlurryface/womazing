@@ -16,7 +16,7 @@ function Footer() {
         <div className={styles.container}>
             <div className={styles.content}>
                 <div className={styles.row}>
-                    <NavLink to="/" className={styles.logo}>
+                    <NavLink to="/womazing/" className={styles.logo}>
                         <img src={logo} alt="" className={styles.logo_icon} />Womazing
                     </NavLink>
                     <nav className={styles.nav}>

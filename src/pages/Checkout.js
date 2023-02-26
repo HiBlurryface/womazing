@@ -54,12 +54,12 @@ function Checkout() {
             order: checkout,
         }
         console.log(data)
-        navigate('/checkout/success')
+        navigate('/womazing/checkout/success')
         dispatch(clearCart([]))
     };
 
     return checkout === null
-        ? <Navigate to="/*" />
+        ? <Navigate to="/womazing/*" />
         : <>
             <Preview title="Checkout" />
             <section className={styles.order}>

@@ -1,19 +1,19 @@
 const navigation = [
     {
         title: 'Home',
-        href: '/'
+        href: '/womazing/'
     },
     {
         title: 'Catalog',
-        href: '/catalog'
+        href: '/womazing/catalog'
     },
     {
         title: 'About us',
-        href: '/about-us'
+        href: '/womazing/about-us'
     },
     {
         title: 'Contacts',
-        href: '/contacts'
+        href: '/womazing/contacts'
     },
 ]
 

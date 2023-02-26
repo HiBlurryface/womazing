@@ -13,23 +13,23 @@ import styles from './Header.module.scss';
 
 function Header() {
     const dispatch = useDispatch();
-    const cart = useSelector(state=>state.cart);
+    const cart = useSelector(state => state.cart);
     const navigate = useNavigate();
     const [isFixed, setIsFixed] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [modal, setModal] = useState(false);
-    
+
     window.addEventListener('scroll', function () {
         window.scrollY > 1 ? setIsFixed(true) : setIsFixed(false);
     });
     isOpen ? document.querySelector('body').classList.add("lock") : document.querySelector('body').classList.remove("lock");
-    modal ? document.querySelector('body').style.overflow = 'hidden' : document.querySelector('body').style.overflow = 'unset'  
+    modal ? document.querySelector('body').style.overflow = 'hidden' : document.querySelector('body').style.overflow = 'unset'
 
     return <>
-        <header className={classNames(styles.header, {[`${styles.header_fixed}`]: isFixed})}>
+        <header className={classNames(styles.header, { [`${styles.header_fixed}`]: isFixed })}>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <NavLink to={"/"} className={styles.logo}>
+                    <NavLink to={"/womazing/"} className={styles.logo}>
                         <img src={logo} alt="" className={styles.logo_icon} />Womazing
                     </NavLink>
                     <nav className={classNames(styles.nav, { [`${styles.nav_active}`]: isOpen })}>
@@ -38,7 +38,7 @@ function Header() {
                                 return <li className={styles.nav_item} key={index}>
                                     <NavLink
                                         to={link.href}
-                                        className={({isActive})=> isActive ? styles.nav_link + ' '+ styles.nav_link_active : styles.nav_link}
+                                        className={({ isActive }) => isActive ? styles.nav_link + ' ' + styles.nav_link_active : styles.nav_link}
                                         onClick={() => setIsOpen(false)}
                                     >
                                         {link.title}
@@ -55,7 +55,7 @@ function Header() {
                         </div>
                         <p className={styles.contact_text}>+7 (495) 823-54-12</p>
                     </button>
-                    <NavLink to="/cart" className={styles.cart}>
+                    <NavLink to="/womazing/cart" className={styles.cart}>
                         <img src={shoppingCart} className={styles.cart_icon} />
                         {cart.length > 0 && <span className={styles.cart_items}>{cart.length}</span>}
                     </NavLink>
@@ -68,7 +68,7 @@ function Header() {
                 </div>
             </div>
         </header>
-        <Modal modal={modal} setModal={setModal}/>
+        <Modal modal={modal} setModal={setModal} />
     </>
 }
 

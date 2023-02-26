@@ -34,7 +34,7 @@ function About() {
                             <p className={styles.about__block_info}>Despite the fact that the founder was a lawyer by training, her family has always been closely associated with sewing (the founder's great-grandmother made clothes for women, and her mother founded a professional school of tailoring). The desire to produce clothes for the masses carried great promise, especially at a time when high fashion still dominated and the market for quality prêt-a-porter simply did not exist.</p>
                         </div>
                     </div>
-                    <Button onClick={()=>navigate('/catalog')} style={{ margin: '0px auto' }}>Go to store</Button>
+                    <Button onClick={()=>navigate('/womazing/catalog')} style={{ margin: '0px auto' }}>Go to store</Button>
                 </div>
             </div>
         </section>

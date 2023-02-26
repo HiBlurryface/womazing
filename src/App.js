@@ -49,7 +49,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="womazing/" element={<Layout />}>
           <Route index element={<Home goods={goods} />} />
           <Route path="catalog" element={<Catalog goods={goods} />} />
           <Route path="product/:id" element={<Product goods={goods} />} />

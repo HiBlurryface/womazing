@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from './ProductsItem.module.scss'
 function ProductsItem({data}) {
-    return <NavLink to={`/product/${data.id}`} className={styles.block}>
+    return <NavLink to={`/womazing/product/${data.id}`} className={styles.block}>
         <div className={styles.img}>
             <div className={styles.bg}>
                 <svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg">

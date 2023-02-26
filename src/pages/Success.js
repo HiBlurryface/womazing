@@ -12,7 +12,7 @@ function Success() {
     const navigate = useNavigate()
 
     return checkout === null
-        ? <Navigate to="/*" />
+        ? <Navigate to="/womazing/*" />
         : <>
             <Preview title="Order received" />
             <section className={styles.content}>
@@ -23,7 +23,7 @@ function Success() {
                             <h2 className={styles.block__text_title}>Order successfully completed</h2>
                             <p className={styles.block__text_info}>We will contact you shortly!</p>
                         </div>
-                        <ButtonTransparent onClick={() => navigate('/')}>To Home</ButtonTransparent>
+                        <ButtonTransparent onClick={() => navigate('/womazing/')}>To Home</ButtonTransparent>
                     </div>
                 </div>
             </section>

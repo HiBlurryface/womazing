@@ -57,7 +57,7 @@ function Home({goods}) {
                             <div className='intro__slider_pagination'></div>
                         </Swiper>
                         <div className={styles.intro__text_group}>
-                            <Button onClick={() => navigate('/catalog')}>Open shop</Button>
+                            <Button onClick={() => navigate('/womazing/catalog')}>Open shop</Button>
                         </div>
                     </div>
                     <div className={styles.intro__img}>
@@ -82,7 +82,7 @@ function Home({goods}) {
                         if(index > goods.length-4) {return <ProductsItem data={product} key={product.id} />}
                     })}
                 </div>
-                <ButtonTransparent onClick={() => navigate('/catalog')}>Open shop</ButtonTransparent>
+                <ButtonTransparent onClick={() => navigate('/womazing/catalog')}>Open shop</ButtonTransparent>
             </div>
         </section>
         <section className={styles.quality}>
@@ -141,7 +141,7 @@ function Home({goods}) {
                         <h3 className={styles.about__info_title}>For everyone</h3>
                         <p className={styles.about__info_text}>Every girl is unique. However, we are similar in a million little things.</p>
                         <p className={styles.about__info_text}>Womazing looks for these little things and creates beautiful things that emphasize the advantages of every girl.</p>
-                        <NavLink to="/about-us" className={styles.about__info_link}>More about the brand</NavLink>
+                        <NavLink to="/womazing/about-us" className={styles.about__info_link}>More about the brand</NavLink>
                     </div>
                 </div>
             </div>
