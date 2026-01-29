@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from './ProductsItem.module.scss'
+
 function ProductsItem({ data }) {
     return <NavLink to={`/womazing/product/${data.id}`} className={styles.block}>
         {data.fullPrice && <div className={styles.sale}>
-            <p className={styles.sale__text}>-{100-(data.price / data.fullPrice * 100).toFixed()}%</p>
+            <p className={styles.sale__text}>-{100 - (data.price / data.fullPrice * 100).toFixed()}%</p>
         </div>}
         {data.isBestseller === true && <p className={styles.bestseller}>BESTSELLER</p>}
         <div className={styles.img}>

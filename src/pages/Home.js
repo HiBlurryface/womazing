@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination, Navigation } from "swiper";
 import { useNavigate, NavLink } from 'react-router-dom';
@@ -24,7 +24,7 @@ import 'swiper/css';
 import './../assets/styles/swiper.scss'
 import styles from './../assets/styles/Home.module.scss'
 
-function Home({goods}) {
+function Home({ goods }) {
     SwiperCore.use([Pagination]);
     const navigate = useNavigate()
 
@@ -79,7 +79,7 @@ function Home({goods}) {
                 <h2 className={styles.products__title}>New goods</h2>
                 <div className={styles.products__content}>
                     {goods.map((product, index) => {
-                        if(index > goods.length-4) {return <ProductsItem data={product} key={product.id} />}
+                        if (index > goods.length - 4) { return <ProductsItem data={product} key={product.id} /> }
                     })}
                 </div>
                 <ButtonTransparent onClick={() => navigate('/womazing/catalog')}>Open shop</ButtonTransparent>

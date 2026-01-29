@@ -92,7 +92,7 @@ function Checkout() {
                                     />
                                 </div>
                                 <div className={styles.order__block}>
-                                    <h2 className={styles.order__title}>Адрес получателя</h2>
+                                    <h2 className={styles.order__title}>Your address</h2>
                                     <ValidationInput
                                         id="country"
                                         type="text"

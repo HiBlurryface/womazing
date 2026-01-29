@@ -1,10 +1,10 @@
-@import '_reset.scss';
-@import '_fonts.scss';
+@import "_reset.scss";
+@import "_fonts.scss";
 
 body {
     overflow: visible;
     overflow-x: hidden;
-    font-family: 'Raleway';
+    font-family: "Raleway";
     &.lock {
         @media (max-width: 425px) {
             overflow: hidden !important;
@@ -29,18 +29,14 @@ main {
 }
 
 section {
-    padding: 130px 0 0 0;
-
-    @media (max-width: 1440px) {
-        padding: 100px 0 0 0;
-    }
+    padding: 80px 0 0 0;
 
     @media (max-width: 1024px) {
-        padding: 80px 0 0 0;
+        padding: 50px 0 0 0;
     }
 
     @media (max-width: 425px) {
-        padding: 60px 0 0 0;
+        padding: 40px 0 0 0;
     }
 }
 
@@ -52,9 +48,9 @@ textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-  -webkit-transition: background-color 5000s ease-in-out 0s !important;
-  transition: background-color 5000s ease-in-out 0s !important;
+    -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+    -webkit-transition: background-color 5000s ease-in-out 0s !important;
+    transition: background-color 5000s ease-in-out 0s !important;
 }
 
 #root {
@@ -74,13 +70,13 @@ select:-webkit-autofill:focus {
 
 ::-webkit-scrollbar {
     width: 6px;
-  
+
     &-thumb {
-      background: #d7d7d7;
-      border-radius: 100px;
+        background: #d7d7d7;
+        border-radius: 100px;
     }
-  
+
     &-track {
         background: #fff;
     }
-  }
+}

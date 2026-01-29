@@ -48,7 +48,7 @@ function Contacts() {
                 <div className={styles.contacts__content}>
                     <div className={styles.contacts__block}>
                         <p className={styles.contacts__block_title}>Telephone</p>
-                        <a href="tel:12345678" className={styles.contacts__block_link}>+7 (495) 823-54-12</a>
+                        <a href="tel:12345678" className={styles.contacts__block_link}>+48 111 222 333</a>
                     </div>
                     <div className={styles.contacts__block}>
                         <p className={styles.contacts__block_title}>E-mail</p>
@@ -56,7 +56,7 @@ function Contacts() {
                     </div>
                     <div className={styles.contacts__block}>
                         <p className={styles.contacts__block_title}>Address</p>
-                        <a href="https://www.google.com/maps/@35.7040744,139.5577317,3a,89.9y,288.4h,72.03t/data=!3m6!1e1!3m4!1sgT28ssf0BB2LxZ63JNcL1w!2e0!7i13312!8i6656" className={styles.contacts__block_link}>г. Москва, 3-я улица Строителей, 25</a>
+                        <a href="https://www.google.com/maps?hl=ru&gl=pl&um=1&ie=UTF-8&fb=1&sa=X&ftid=0x47165b120455da67:0xc3c7f5071b750d33" className={styles.contacts__block_link}>Krakow, 31-221, Rynek Główny</a>
                     </div>
                 </div>
             </div>

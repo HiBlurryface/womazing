@@ -1,14 +1,14 @@
-@import './../../../assets/styles/styles';
+@import "./../../../assets/styles/styles";
 
 .container {
     @extend %container;
-} 
+}
 
 .wrapper {
-    margin: 200px 0 0;
+    margin: 120px 0 0;
 
-    @media (max-width: 768px) {
-        margin: 130px 0 0;
+    @media (max-width: 1024px) {
+        margin: 80px 0 0;
     }
 }
 .title {
